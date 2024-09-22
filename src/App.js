@@ -1,11 +1,10 @@
 import "./App.css";
-import { Header } from "./components";
+import { Header, Hero } from "./components";
 function App() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-[#131314]">
       <Header />
-      <h1>YO</h1>
-      YO
+      <Hero />
     </div>
   );
 }

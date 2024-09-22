@@ -15,7 +15,7 @@ const HeaderLink = ({ linkName, linkUrl }) => {
 const Header = () => {
   return (
     <div className="flex flex-row justify-center items-center text-white">
-      <div className="py-3 px-2 max-w-7xl flex flex-grow flex-row justify-between items-center">
+      <div className="py-3 pt-5 px-2 max-w-7xl flex flex-grow flex-row justify-between items-center">
         <div className="flex flex-row items-center">
           <img
             src={logo}
