@@ -26,16 +26,16 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col space-y-2 text-sm">
-            <a href="/" className="">
+            <a href="/" className="hover:text-black">
               Homepage
             </a>
-            <a href="/" className="">
+            <a href="/" className="hover:text-black ">
               What We Do
             </a>
-            <a href="/" className="">
+            <a href="/" className="hover:text-black ">
               Our Services
             </a>
-            <a href="/" className="">
+            <a href="/" className="hover:text-black ">
               Contact
             </a>
             <div className="rounded-md flex flex-row items-center px-2 py-1 ring-black ring-1 focus:ring-black transition-all ease-in-out duration-150 hover:shadow-xl hover:bg-black hover:text-slate-50">
@@ -47,31 +47,31 @@ const Footer = () => {
           <div className="flex flex-col space-y-2 text-sm">
             <a
               href="https://www.linkedin.com/company/delpat"
-              className="hover:text-gray-300"
+              className="hover:text-black"
             >
               LinkedIn
             </a>
             <a
               href="https://www.medium.com/delpat"
-              className="hover:text-gray-300"
+              className="hover:text-black"
             >
               Medium
             </a>
             <a
               href="https://www.facebook.com/delpat"
-              className="hover:text-gray-300"
+              className="hover:text-black"
             >
               Facebook
             </a>
             <a
               href="https://www.facebook.com/delpat"
-              className="hover:text-gray-300"
+              className="hover:text-black"
             >
               Instagram
             </a>
             <a
               href="https://www.facebook.com/delpat"
-              className="hover:text-gray-300"
+              className="hover:text-black"
             >
               X
             </a>
