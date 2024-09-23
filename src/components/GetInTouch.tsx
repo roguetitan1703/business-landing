@@ -44,7 +44,8 @@ const GetInTouch = () => {
             Get in touch
           </p>
           <h5 className="mb-16 text-5xl">What can we solve for you today?</h5>
-          <div className="rounded-md border border-slate-50 p-12 bg-gradient-to-tr from-[#05010c] to-[#260101]">
+          {/* <div className="rounded-md border border-slate-50 p-12 bg-gradient-to-tr from-[#05010c] to-[#260101]"> */}
+          <div className="rounded-md border border-slate-50 p-12 ">
             <form onSubmit={handleSubmit}>
               <div className="mb-4 flex flex-row items-center">
                 <label

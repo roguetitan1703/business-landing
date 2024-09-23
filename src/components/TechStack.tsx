@@ -39,19 +39,33 @@ const TechIcons = [
 const RenderTechIcons = TechIcons.map((tech) => (
   <img
     src={tech.icon}
-    className="h-24 hover:scale-110 transition-all duration-150 ease-in-out"
+    className="h-24 my-10 hover:scale-110 transition-all duration-150 ease-in-out"
   />
 ));
 const TechStack = () => {
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:items-center lg:px-8 text-slate-50">
-      <p
-        className="text-lg uppercase font-extrabold mb-4"
-        style={{ color: "#ff0000" }}
-      >
-        Tech Stack
-      </p>
-      <div className="grid grid-cols-6 space-y-10">{RenderTechIcons}</div>
+    <div className="">
+      <div className="mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:items-center lg:px-8">
+        <div className="text-slate-50 p-4 rounded-lg">
+          <p
+            className="text-lg uppercase font-extrabold mb-4"
+            style={{ color: "#ff0000" }}
+          >
+            Tech Stack
+          </p>
+          <h5 className="mb-16 text-5xl">
+            Technologies which make sure your tech never falls behind.
+          </h5>
+
+          <div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25"></div>
+
+            <div className="rounded-xl border border-slate-50 p-12 bg-white ring-1 ring-black">
+              <div className="grid grid-cols-6">{RenderTechIcons}</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
