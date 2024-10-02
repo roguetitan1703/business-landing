@@ -19,6 +19,18 @@ module.exports = {
           "0%": { transform: "scale(1)" },
           "100%": { transform: "scale(1.4)" },
         },
+        // flicker: {
+        //   "0%, 100%": { opacity: "1" },
+        //   "10%": { opacity: "0.6" },
+        //   "20%": { opacity: "0.8" },
+        //   "30%": { opacity: "0.3" },
+        //   "40%": { opacity: "0.9" },
+        //   "50%": { opacity: "0.5" },
+        //   "60%": { opacity: "0.7" },
+        //   "70%": { opacity: "0.2" },
+        //   "80%": { opacity: "0.85" },
+        //   "90%": { opacity: "0.4" },
+        // },
       },
       backgroundSize: {
         "300%": "300%",
@@ -26,6 +38,7 @@ module.exports = {
       animation: {
         gradient: "animatedgradient 4s ease infinite alternate",
         beat: "beat 1s infinite alternate",
+        // flicker: "flicker 1s infinite",
       },
     },
   },
