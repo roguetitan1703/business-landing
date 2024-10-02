@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import img from "../devdata/assets/image.png";
+import {
+  Design,
+  Strategy,
+  Development,
+  Support,
+  Elasticity,
+} from "../devdata/assets";
 
 const FeaturesList = [
   {
@@ -7,14 +13,14 @@ const FeaturesList = [
     subhead: "Data-Driven",
     description:
       "Strategic planning guided by data analysis, ensuring targeted solutions.",
-    image: img,
+    image: Strategy,
     color: "#3498db", // Blue
   },
   {
     name: "Design",
     subhead: "User-Centric",
     description: "Intuitive interfaces crafted with user needs in mind.",
-    image: img,
+    image: Design,
     color: "#f39c12", // Orange
   },
   {
@@ -22,7 +28,7 @@ const FeaturesList = [
     subhead: "Over the top",
     description:
       "Scalable solutions built using latest technologies, prioritizing security and robustness.",
-    image: img,
+    image: Development,
     color: "#2ecc71", // Green
   },
   {
@@ -30,7 +36,7 @@ const FeaturesList = [
     subhead: "Dedicated Assistance",
     description:
       "Comprehensive support, ensuring seamless operation and addressing challenges promptly.",
-    image: img,
+    image: Support,
     color: "#e74c3c", // Red
   },
   {
@@ -38,7 +44,7 @@ const FeaturesList = [
     subhead: "Future-Proof Solutions",
     description:
       "Scalable infrastructure and robust security, future-proofing your digital presence.",
-    image: img,
+    image: Elasticity,
     color: "#9b59b6", // Purple
   },
 ];

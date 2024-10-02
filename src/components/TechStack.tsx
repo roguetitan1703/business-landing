@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 
-import Android from "../devdata/assets/Android.png";
-import Angular from "../devdata/assets/Angular.png";
-import AWS from "../devdata/assets/AWS.png";
-import Bootstrap from "../devdata/assets/Bootstrap.png";
-import Django from "../devdata/assets/Django.png";
-import Express from "../devdata/assets/Express.png";
-import FastAPI from "../devdata/assets/FastAPI.png";
-import Firebase from "../devdata/assets/Firebase.png";
-import Flask from "../devdata/assets/Flask.png";
-import Go from "../devdata/assets/Go.png";
-import Nextjs from "../devdata/assets/Next.js.png";
-import Nodejs from "../devdata/assets/Node.js.png";
-import ReactIcon from "../devdata/assets/React.png";
-import WordPress from "../devdata/assets/WordPress.png";
-import TailwindCSS from "../devdata/assets/TailwindCSS.png";
-import Threejs from "../devdata/assets/Three.js.png";
-
+import {
+  Android,
+  Angular,
+  AWS,
+  Bootstrap,
+  Django,
+  Express,
+  FastAPI,
+  Firebase,
+  Flask,
+  Go,
+  Nodejs,
+  Nextjs,
+  ReactIcon,
+  WordPress,
+  TailwindCSS,
+  Threejs,
+} from "../devdata/assets";
 const TechIcons = [
   {
     name: "Android",

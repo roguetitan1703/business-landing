@@ -28,12 +28,15 @@ const Header = () => {
           <HeaderLink linkName="Our Services" linkUrl="/" />
           {/* <HeaderLink linkName="Tech Stack" linkUrl="/" /> */}
           <HeaderLink linkName="Contact" linkUrl="/" />
-          <a className="group flex cursor-pointer flex-row items-center bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-2 rounded-lg shadow-xl text-black text-md font-bold mr-2 hover:mr-0 hover:ring-blue-500 hover:ring-2 transition-all ease-in-out duration-150">
+          <button
+            onClick={() => window.scrollTo({ top: 6250, behavior: "smooth" })}
+            className="group flex cursor-pointer flex-row items-center bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-2 rounded-lg shadow-xl text-black text-md font-bold mr-2 hover:mr-0 hover:ring-blue-500 hover:ring-2 transition-all ease-in-out duration-150"
+          >
             <div className="mr-2 group-hover:mr-4 transition-all ease-in-out duration-150">
               Get a Quote
             </div>
             <FontAwesomeIcon icon={faArrowRight} className="" />
-          </a>
+          </button>
         </div>
       </div>
     </div>

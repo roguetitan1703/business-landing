@@ -61,6 +61,7 @@ const GetInTouch = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
+                  placeholder="a pizza guy"
                 />
               </div>
               <div className="mb-4 flex flex-row items-center">
@@ -68,7 +69,7 @@ const GetInTouch = () => {
                   htmlFor="companyName"
                   className="w-1/4 block text-sm font-medium mb-2"
                 >
-                  Company Name
+                  I represent
                 </label>
                 <input
                   type="text"
@@ -77,6 +78,7 @@ const GetInTouch = () => {
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
                   required
+                  placeholder="the pizza corp"
                 />
               </div>
               <div className="mb-4 flex flex-row items-center">
@@ -84,7 +86,7 @@ const GetInTouch = () => {
                   htmlFor="title"
                   className="w-1/4 block text-sm font-medium mb-2"
                 >
-                  Title
+                  Now lets chat about
                 </label>
                 <input
                   type="text"
@@ -93,14 +95,32 @@ const GetInTouch = () => {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
+                  placeholder="pizzas!"
                 />
+              </div>
+
+              <div className="mb-4 flex flex-row items-center">
+                <label
+                  htmlFor="message"
+                  className="w-1/4 block text-sm font-medium mb-2"
+                >
+                  So listen
+                </label>
+                <textarea
+                  id="message"
+                  className="w-3/4 bg-gray-700 border border-gray-600 text-white rounded-md px-4 py-2 w-full h-16 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  placeholder="i love extra cheese and toppings on my pizza"
+                ></textarea>
               </div>
               <div className="mb-4 flex flex-row items-center">
                 <label
                   htmlFor="phone"
                   className="w-1/4 block text-sm font-medium mb-2"
                 >
-                  Phone
+                  You can call me on
                 </label>
                 <input
                   type="tel"
@@ -109,6 +129,8 @@ const GetInTouch = () => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   required
+                  placeholder="pizzapizza"
+                  maxLength={10}
                 />
               </div>
               <div className="mb-4 flex flex-row items-center">
@@ -116,7 +138,7 @@ const GetInTouch = () => {
                   htmlFor="email"
                   className="w-1/4 block text-sm font-medium mb-2"
                 >
-                  Email Address
+                  and mail me @
                 </label>
                 <input
                   type="email"
@@ -125,22 +147,8 @@ const GetInTouch = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  placeholder="mailme@here.com"
                 />
-              </div>
-              <div className="mb-4 flex flex-row items-center">
-                <label
-                  htmlFor="message"
-                  className="w-1/4 block text-sm font-medium mb-2"
-                >
-                  I'd like to chat about
-                </label>
-                <textarea
-                  id="message"
-                  className="w-3/4 bg-gray-700 border border-gray-600 text-white rounded-md px-4 py-2 w-full h-16 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                ></textarea>
               </div>
               <div className="mt-8 flex flex-row justify-end">
                 <button className="self-right rounded-full flex flex-row items-center px-8 py-2 bg-white text-black hover:bg-opacity-0 hover:text-white hover:ring-white hover:ring-1 transition-all ease-in-out duration-150">

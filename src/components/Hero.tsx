@@ -20,7 +20,10 @@ const Hero = () => {
           <p className="text-xl">
             to Design, Build, Plan and Execute your next idea into Reality
           </p>
-          <a href="#" className="flex items-center group z-10">
+          <a
+            onClick={() => window.scrollTo({ top: 6250, behavior: "smooth" })}
+            className="flex items-center group z-10"
+          >
             <div className="relative rounded-full flex flex-row items-center px-4 py-2 bg-gradient-to-l hover:bg-none from-cyan-400 to-purple-500 hover:ring-white hover:ring-1 hover:scale-105 transition-transform ease-in-out duration-150">
               <span className="mr-1 text-transparent text-nowrap bg-clip-text bg-white group-hover:bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:text-transparent">
                 Get in touch
