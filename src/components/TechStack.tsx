@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Android from "../devdata/assets/Android.png";
 import Angular from "../devdata/assets/Angular.png";
@@ -18,31 +18,62 @@ import TailwindCSS from "../devdata/assets/TailwindCSS.png";
 import Threejs from "../devdata/assets/Three.js.png";
 
 const TechIcons = [
-  { name: "Android", icon: Android },
-  { name: "Angular", icon: Angular, colorgrad: "red-white-red" },
-  { name: "AWS", icon: AWS, colorgrad: "orange-black-orange" },
-  { name: "Bootstrap", icon: Bootstrap, colorgrad: "purple-white-purple" },
-  { name: "Django", icon: Django, colorgrad: "white-darkgreen-white" },
-  { name: "Express", icon: Express, colorgrad: "white-balck-white" },
-  { name: "FastAPI", icon: FastAPI, colorgrad: "white-mattegreen-white" },
-  { name: "Firebase", icon: Firebase, colorgrad: "orange-red-yellow" },
-  { name: "Flask", icon: Flask, colorgrad: "white-black-white" },
-  { name: "Go", icon: Go, colorgrad: "skin-lightblue-skin" },
-  { name: "Next.js", icon: Nextjs, colorgrad: "darkblack-white-darkblack" },
-  { name: "Node.js", icon: Nodejs, colorgrad: "green-green-green" },
-  { name: "Three.js", icon: Threejs, colorgrad: "darkblack-white-darkblack" },
-  { name: "React", icon: ReactIcon, colorgrad: "lightblue" },
-  { name: "WordPress", icon: WordPress, colorgrad: "dampblue-lightblack-blue" },
-  { name: "TailwindCSS", icon: TailwindCSS, colorgrad: "darkblue" },
+  {
+    name: "Android",
+    icon: Android,
+    colorgrad: "from-white via-green-400 to-green-600",
+  },
+  { name: "Angular", icon: Angular, colorgrad: "from-red-500 to-red-700" },
+  { name: "AWS", icon: AWS, colorgrad: "from-yellow-400 to-orange-500" },
+  {
+    name: "Bootstrap",
+    icon: Bootstrap,
+    colorgrad: "from-purple-500 to-indigo-600",
+  },
+  { name: "Django", icon: Django, colorgrad: "from-green-700 to-green-900" },
+  { name: "Express", icon: Express, colorgrad: "from-gray-300 to-gray-500" },
+  { name: "FastAPI", icon: FastAPI, colorgrad: "from-teal-400 to-teal-600" },
+  { name: "Firebase", icon: Firebase, colorgrad: "from-yellow-500 to-red-500" },
+  { name: "Flask", icon: Flask, colorgrad: "from-gray-100 to-gray-300" },
+  { name: "Go", icon: Go, colorgrad: "from-blue-400 to-blue-500" },
+  { name: "Next.js", icon: Nextjs, colorgrad: "from-gray-900 to-gray-800" },
+  { name: "Node.js", icon: Nodejs, colorgrad: "from-green-500 to-green-700" },
+  { name: "Three.js", icon: Threejs, colorgrad: "from-gray-900 to-gray-800" },
+  { name: "React", icon: ReactIcon, colorgrad: "from-blue-500 to-cyan-500" },
+  {
+    name: "WordPress",
+    icon: WordPress,
+    colorgrad: "from-blue-700 to-blue-900",
+  },
+  {
+    name: "TailwindCSS",
+    icon: TailwindCSS,
+    colorgrad: "from-teal-500 to-blue-500",
+  },
 ];
 
-const RenderTechIcons = TechIcons.map((tech) => (
-  <img
-    src={tech.icon}
-    className="h-24 my-10 hover:scale-110 transition-all duration-150 ease-in-out"
-  />
-));
 const TechStack = () => {
+  const [hoveredTech, setHoveredTech] = useState(null);
+
+  const handleMouseEnter = (colorgrad) => {
+    setHoveredTech(colorgrad);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredTech(null);
+  };
+
+  const RenderTechIcons = TechIcons.map((tech) => (
+    <img
+      key={tech.name}
+      src={tech.icon}
+      alt={tech.name}
+      className="h-24 my-10 hover:scale-110 transition-all duration-500 ease-in-out"
+      onMouseEnter={() => handleMouseEnter(tech.colorgrad)}
+      onMouseLeave={handleMouseLeave}
+    />
+  ));
+
   return (
     <div className="">
       <div className="mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:items-center lg:px-8">
@@ -58,8 +89,12 @@ const TechStack = () => {
           </h5>
 
           <div>
-            <div className="relative -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg ">
-              <div className="rounded-xl border border-slate-50 p-12  ring-1 ring-black">
+            <div
+              className={`relative -inset-1 rounded-lg transition-all  duration-1000 ${
+                hoveredTech ? `bg-gradient-to-r ${hoveredTech}` : "bg-white"
+              }`}
+            >
+              <div className="rounded-xl border border-slate-50 p-12 ring-1 ring-black">
                 <div className="grid grid-cols-6">{RenderTechIcons}</div>
               </div>
             </div>
