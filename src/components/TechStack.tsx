@@ -21,34 +21,82 @@ const TechIcons = [
   {
     name: "Android",
     icon: Android,
-    colorgrad: "from-white via-green-400 to-green-600",
+    colorgrad: "bg-gradient-to-r from-green-500 to-green-10",
   },
-  { name: "Angular", icon: Angular, colorgrad: "from-red-500 to-red-700" },
-  { name: "AWS", icon: AWS, colorgrad: "from-yellow-400 to-orange-500" },
+  {
+    name: "Angular",
+    icon: Angular,
+    colorgrad: "bg-gradient-to-r from-red-700 from-20% to-red-10",
+  },
+  {
+    name: "AWS",
+    icon: AWS,
+    colorgrad: "bg-gradient-to-r from-yellow-600 from-40% to-yellow-10",
+  },
   {
     name: "Bootstrap",
     icon: Bootstrap,
-    colorgrad: "from-purple-500 to-indigo-600",
+    colorgrad: "bg-gradient-to-l from-indigo-600 from-40%  to-purple-10",
   },
-  { name: "Django", icon: Django, colorgrad: "from-green-700 to-green-900" },
-  { name: "Express", icon: Express, colorgrad: "from-gray-300 to-gray-500" },
-  { name: "FastAPI", icon: FastAPI, colorgrad: "from-teal-400 to-teal-600" },
-  { name: "Firebase", icon: Firebase, colorgrad: "from-yellow-500 to-red-500" },
-  { name: "Flask", icon: Flask, colorgrad: "from-gray-100 to-gray-300" },
-  { name: "Go", icon: Go, colorgrad: "from-blue-400 to-blue-500" },
-  { name: "Next.js", icon: Nextjs, colorgrad: "from-gray-900 to-gray-800" },
-  { name: "Node.js", icon: Nodejs, colorgrad: "from-green-500 to-green-700" },
-  { name: "Three.js", icon: Threejs, colorgrad: "from-gray-900 to-gray-800" },
-  { name: "React", icon: ReactIcon, colorgrad: "from-blue-500 to-cyan-500" },
+  {
+    name: "Django",
+    icon: Django,
+    colorgrad: "bg-gradient-to-l from-green-700 from-20% to-green-10",
+  },
+  {
+    name: "Express",
+    icon: Express,
+    colorgrad: "bg-gradient-to-l from-gray-400  to-gray-10",
+  },
+  {
+    name: "FastAPI",
+    icon: FastAPI,
+    colorgrad: "bg-gradient-to-r from-teal-600 to-teal-10",
+  },
+  {
+    name: "Firebase",
+    icon: Firebase,
+    colorgrad: "bg-gradient-to-r from-orange-500 from-20% to-red-10",
+  },
+  {
+    name: "Flask",
+    icon: Flask,
+    colorgrad: "bg-gradient-to-r from-gray-300 from-40% to-gray-10",
+  },
+  {
+    name: "Go",
+    icon: Go,
+    colorgrad: "bg-gradient-to-l from-blue-400 from-40%  to-blue-10",
+  },
+  {
+    name: "Next.js",
+    icon: Nextjs,
+    colorgrad: "bg-gradient-to-l from-gray-100 from-20% to-gray-10",
+  },
+  {
+    name: "Node.js",
+    icon: Nodejs,
+    colorgrad: "bg-gradient-to-l from-lime-400 to-green-10",
+  },
+  {
+    name: "Three.js",
+    icon: Threejs,
+    colorgrad: "bg-gradient-to-r from-gray-100  to-gray-10",
+  },
+  {
+    name: "React",
+    icon: ReactIcon,
+    colorgrad: "bg-gradient-to-r from-cyan-500 from-20% to-cyan-10",
+  },
   {
     name: "WordPress",
     icon: WordPress,
-    colorgrad: "from-blue-700 to-blue-900",
+    colorgrad: "bg-gradient-to-r from-blue-900 from-40% to-blue-10",
   },
   {
     name: "TailwindCSS",
     icon: TailwindCSS,
-    colorgrad: "from-teal-500 to-blue-500",
+    colorgrad: "bg-gradient-to-l from-teal-500 from-40% to-blue-10",
   },
 ];
 
@@ -91,7 +139,7 @@ const TechStack = () => {
           <div>
             <div
               className={`relative -inset-1 rounded-lg transition-all  duration-1000 ${
-                hoveredTech ? `bg-gradient-to-r ${hoveredTech}` : "bg-white"
+                hoveredTech ? ` ${hoveredTech}` : "bg-white"
               }`}
             >
               <div className="rounded-xl border border-slate-50 p-12 ring-1 ring-black">
