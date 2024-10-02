@@ -15,12 +15,17 @@ module.exports = {
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         },
+        beat: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.4)" },
+        },
       },
       backgroundSize: {
         "300%": "300%",
       },
       animation: {
         gradient: "animatedgradient 4s ease infinite alternate",
+        beat: "beat 1s infinite alternate",
       },
     },
   },

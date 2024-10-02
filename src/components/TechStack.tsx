@@ -19,21 +19,21 @@ import Threejs from "../devdata/assets/Three.js.png";
 
 const TechIcons = [
   { name: "Android", icon: Android },
-  { name: "Angular", icon: Angular },
-  { name: "AWS", icon: AWS },
-  { name: "Bootstrap", icon: Bootstrap },
-  { name: "Django", icon: Django },
-  { name: "Express", icon: Express },
-  { name: "FastAPI", icon: FastAPI },
-  { name: "Firebase", icon: Firebase },
-  { name: "Flask", icon: Flask },
-  { name: "Go", icon: Go },
-  { name: "Next.js", icon: Nextjs },
-  { name: "Node.js", icon: Nodejs },
-  { name: "Three.js", icon: Threejs },
-  { name: "React", icon: ReactIcon },
-  { name: "WordPress", icon: WordPress },
-  { name: "TailwindCSS", icon: TailwindCSS },
+  { name: "Angular", icon: Angular, colorgrad: "red-white-red" },
+  { name: "AWS", icon: AWS, colorgrad: "orange-black-orange" },
+  { name: "Bootstrap", icon: Bootstrap, colorgrad: "purple-white-purple" },
+  { name: "Django", icon: Django, colorgrad: "white-darkgreen-white" },
+  { name: "Express", icon: Express, colorgrad: "white-balck-white" },
+  { name: "FastAPI", icon: FastAPI, colorgrad: "white-mattegreen-white" },
+  { name: "Firebase", icon: Firebase, colorgrad: "orange-red-yellow" },
+  { name: "Flask", icon: Flask, colorgrad: "white-black-white" },
+  { name: "Go", icon: Go, colorgrad: "skin-lightblue-skin" },
+  { name: "Next.js", icon: Nextjs, colorgrad: "darkblack-white-darkblack" },
+  { name: "Node.js", icon: Nodejs, colorgrad: "green-green-green" },
+  { name: "Three.js", icon: Threejs, colorgrad: "darkblack-white-darkblack" },
+  { name: "React", icon: ReactIcon, colorgrad: "lightblue" },
+  { name: "WordPress", icon: WordPress, colorgrad: "dampblue-lightblack-blue" },
+  { name: "TailwindCSS", icon: TailwindCSS, colorgrad: "darkblue" },
 ];
 
 const RenderTechIcons = TechIcons.map((tech) => (
@@ -58,10 +58,10 @@ const TechStack = () => {
           </h5>
 
           <div>
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25"></div>
-
-            <div className="rounded-xl border border-slate-50 p-12 bg-white ring-1 ring-black">
-              <div className="grid grid-cols-6">{RenderTechIcons}</div>
+            <div className="relative -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg ">
+              <div className="rounded-xl border border-slate-50 p-12  ring-1 ring-black">
+                <div className="grid grid-cols-6">{RenderTechIcons}</div>
+              </div>
             </div>
           </div>
         </div>
