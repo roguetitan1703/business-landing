@@ -1,138 +1,91 @@
 import React from "react";
 
+const servicesArray = [
+  {
+    name: "Custom Software Development",
+    description:
+      "Design and development of bespoke software solutions tailored to your business needs, offering full lifecycle management.",
+    icon: "gear", // Font Awesome icon class for gear
+  },
+  {
+    name: "Mobile & Web Application Development",
+    description:
+      "End-to-end mobile application development for iOS and Android platforms, alongside responsive, scalable, and performance-optimized web applications.",
+    icon: "mobile", // Font Awesome icon class for mobile
+  },
+  {
+    name: "Website Design & Development",
+    description:
+      "Professional website design and development, creating user-friendly, visually appealing websites, optimized for SEO and performance.",
+    icon: "laptop", // Font Awesome icon class for laptop
+  },
+  {
+    name: "UX/UI Design",
+    description:
+      "Intuitive and engaging user interfaces (UI) and user experience (UX) optimization for mobile apps and web platforms.",
+    icon: "palette", // Font Awesome icon class for palette
+  },
+  {
+    name: "Artificial Intelligence Solutions",
+    description:
+      "AI-powered tools and applications for business automation, insights, and improved decision-making. AI integration into existing systems to enhance operational efficiency and competitiveness.",
+    icon: "robot", // Font Awesome icon class for robot
+  },
+  {
+    name: "Cloud Solutions & Hosting",
+    description:
+      "Reliable cloud hosting services for websites, mobile applications, and software solutions, with scalable cloud infrastructure to support your growing business.",
+    icon: "cloud", // Font Awesome icon class for cloud
+  },
+  {
+    name: "IT Consultancy & System Integration",
+    description:
+      "Strategic IT consultancy and system integration services to ensure seamless connectivity between your business systems and technologies.",
+    icon: "network-wired", // Font Awesome icon class for network-wired
+  },
+  {
+    name: "E-commerce Development",
+    description:
+      "Development of e-commerce platforms for online businesses, managing online stores, payments, and logistics.",
+    icon: "shopping-cart", // Font Awesome icon class for shopping-cart
+  },
+  {
+    name: "Emerging Technologies & Innovation",
+    description:
+      "Focus on AI, machine learning, and emerging operating systems, bringing state-of-the-art solutions to your business.",
+    icon: "lightbulb", // Font Awesome icon class for lightbulb
+  },
+];
+
 const OurServices = () => {
   return (
     <div className="max-w-7xl mx-auto p-6 text-white">
       <h1 className="text-4xl font-bold mb-4">Our Services</h1>
       <p className="mb-4">
-        At <strong>DelPat</strong>, we offer a wide range of services to meet
-        the diverse needs of businesses across industries:
+        At **DelPat**, we offer a wide range of services to meet the diverse
+        needs of businesses across industries:
       </p>
-
-      <h2 className="text-2xl font-semibold mt-6">
-        1. Custom Software Development
-      </h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          Design and development of bespoke software solutions, tailored to your
-          business needs.
-        </li>
-        <li>
-          Full software lifecycle management, from concept to deployment and
-          ongoing maintenance.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">
-        2. Mobile & Web Application Development
-      </h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          End-to-end mobile application development for iOS and Android
-          platforms.
-        </li>
-        <li>
-          Web applications that are responsive, scalable, and optimized for
-          performance.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">
-        3. Website Design & Development
-      </h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          Professional website design services, creating user-friendly, visually
-          appealing websites.
-        </li>
-        <li>
-          Development of SEO-optimized websites with enhanced functionality and
-          seamless performance.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">4. UI/UX Design</h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          Creating intuitive and engaging user interfaces (UI) for mobile apps
-          and web platforms.
-        </li>
-        <li>
-          UX optimization to enhance the overall user journey and satisfaction.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">
-        5. Artificial Intelligence Solutions
-      </h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          AI-powered tools and applications to automate business processes,
-          drive insights, and improve decision-making.
-        </li>
-        <li>
-          AI integration into existing systems to enhance operational efficiency
-          and competitiveness.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">
-        6. Cloud Solutions & Hosting
-      </h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          Reliable cloud hosting services for websites, mobile applications, and
-          software solutions.
-        </li>
-        <li>
-          Scalable cloud infrastructure to support your growing business needs.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">
-        7. IT Consultancy & System Integration
-      </h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          Strategic IT consultancy services, offering expert advice on
-          technology solutions.
-        </li>
-        <li>
-          System integration services to ensure seamless connectivity between
-          your business systems and technologies.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">8. E-commerce Development</h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          Development of e-commerce platforms to enable businesses to reach
-          customers online.
-        </li>
-        <li>
-          Custom solutions for managing online stores, payments, and logistics.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-6">
-        9. Emerging Technologies & Innovation
-      </h2>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          Focus on the latest trends in AI, machine learning, and emerging
-          operating systems.
-        </li>
-        <li>
-          Continuous innovation to bring state-of-the-art solutions to your
-          business.
-        </li>
-      </ul>
+      <div className="grid grid-cols-4 gap-4">
+        {servicesArray.map((service) => (
+          <div
+            key={service.name}
+            className="flex flex-col items-center justify-center p-4 rounded-md bg-white text-black shadow-md hover:shadow-lg" // Added flexbox and shadow styles
+          >
+            <i className="text-3xl mb-2 fas fa-{service.icon}"></i>{" "}
+            {/* Font Awesome icon */}
+            <h5 className="text-xl font-semibold mb-4">{service.name}</h5>
+            <div className="list-disc list-inside mb-4">
+              {service.description}
+            </div>
+          </div>
+        ))}
+      </div>
 
       <p className="mt-6">
-        At <strong>DelPat</strong>, we are committed to helping your business
-        grow by leveraging the power of technology. Our expert team is ready to
-        deliver solutions that enhance productivity, streamline operations, and
-        drive innovation.
+        At **DelPat**, we are committed to helping your business grow by
+        leveraging the power of technology. Our expert team is ready to deliver
+        solutions that enhance productivity, streamline operations, and drive
+        innovation.
       </p>
     </div>
   );
