@@ -8,7 +8,7 @@ const HeaderLink = ({ linkName, linkUrl, fn }) => {
     <a
       onClick={fn || console.log("Jata hu bhau")}
       href={linkUrl}
-      className="text-sm font-bold hover:opacity-75 mr-7 cursor-pointer"
+      className="text-sm font-bold hover:opacity-75 cursor-pointer hover:border-b transition-ease-in-out duration-150"
     >
       {linkName}
     </a>
