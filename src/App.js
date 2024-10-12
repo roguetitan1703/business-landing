@@ -6,7 +6,7 @@ import { WhatweDo, Services, Home } from "./Screens";
 function App() {
   return (
     <Router>
-      <div className="bg-[#131314] scroll-smooth">
+      <div className="bg-[#131314] scroll-smooth ">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
