@@ -50,40 +50,8 @@ const FeaturesList = [
 ];
 
 const Feature = ({ name, subhead, description, image, color }) => {
-  const featureRef = useRef(null); // Create a ref to track visibility
-  const [isVisible, setIsVisible] = React.useState(false); // State to track visibility
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (featureRef.current) {
-      observer.observe(featureRef.current);
-    }
-
-    return () => {
-      if (featureRef.current) {
-        observer.unobserve(featureRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <div
-      ref={featureRef}
-      className={`flex flex-col lg:flex-row even:flex-row odd:flex-row-reverse items-center py-10 lg:py-20 transform transition-transform duration-700 ease-in-out ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-      }`}
-    >
+    <div className="flex flex-col lg:flex-row even:flex-row odd:flex-row-reverse items-center py-10 lg:py-20">
       {/* Adjust image and text layout based on screen size */}
       <div className="w-full lg:w-1/2 p-6 lg:p-12">
         <img src={image} alt={name} className="w-full h-auto" />
@@ -104,7 +72,6 @@ const Feature = ({ name, subhead, description, image, color }) => {
 
 const BuildFeatures = FeaturesList.map((feature) => (
   <Feature
-    key={feature.name} // Add a key prop for efficient rendering
     name={feature.name}
     subhead={feature.subhead}
     description={feature.description}
@@ -228,23 +195,9 @@ const GlowingText = ({ text, glowColor, delay = 1000 }) => {
 };
 
 const Features = () => {
-  const scrollRef = useRef(null); // Ref for the scrollable container
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = 0;
-    }
-  }, []);
-
   return (
-    <div className="text-slate-50 relative mx-auto w-full px-4 py-32 sm:px-6 lg:items-center lg:px-8">
-      <div
-        ref={scrollRef}
-        className="overflow-y-auto h-[80vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300"
-      >
-        {BuildFeatures}
-      </div>
+    <div className="text-slate-50 relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:items-center lg:px-8">
+      {BuildFeatures}
     </div>
   );
 };
