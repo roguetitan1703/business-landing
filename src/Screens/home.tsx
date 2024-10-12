@@ -1,5 +1,5 @@
 import React from "react";
-import { Features, Hero, GetInTouch, TechStack } from "../components";
+import { Features, Hero, TechStack } from "../components";
 
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <Hero />
       <Features />
       <TechStack />
-      <GetInTouch />
+      {/* <GetInTouch /> */}
     </div>
   );
 }

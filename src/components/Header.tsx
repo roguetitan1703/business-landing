@@ -56,7 +56,7 @@ const Header = () => {
             linkUrl="/our-services"
             fn={undefined}
           />
-          <HeaderLink fn={scrollToFoot} linkName="Contact" linkUrl="/contact" />
+          <HeaderLink fn={undefined} linkName="Contact" linkUrl="/contact" />
           <button
             onClick={scrollTogit}
             className="group flex cursor-pointer flex-row items-center bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-2 rounded-lg shadow-xl text-black text-md font-bold hover:ring-blue-500 hover:ring-2 transition-all ease-in-out duration-150"
@@ -91,7 +91,7 @@ const Header = () => {
           linkUrl="/our-services"
           fn={undefined}
         />
-        <HeaderLink fn={scrollToFoot} linkName="Contact" linkUrl="/contact" />
+        <HeaderLink fn={undefined} linkName="Contact" linkUrl="/contact" />
         <button
           onClick={() => window.scrollTo({ top: 6250, behavior: "smooth" })}
           className="group flex cursor-pointer flex-row items-center bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-2 rounded-lg shadow-xl text-black text-md font-bold hover:ring-blue-500 hover:ring-2 transition-all ease-in-out duration-150"
