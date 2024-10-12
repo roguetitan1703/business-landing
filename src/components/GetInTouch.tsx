@@ -1,17 +1,7 @@
 import React, { useState } from "react";
-
-// const GlowingText = ({ text, glowColor }) => {
-//   return (
-//     <h3
-//       className={`text-5xl font-bold mb-3`}
-//       style={{
-//         textShadow: `0 0 10px ${glowColor}, 0 0 20px ${glowColor}, 0 0 30px ${glowColor}`,
-//       }}
-//     >
-//       {text}
-//     </h3>
-//   );
-// };
+import { db } from "../firebase"; // Adjust the path according to your structure
+import { collection, addDoc } from "firebase/firestore"; // Import necessary Firestore functions
+import Swal from "sweetalert2"; // Import SweetAlert2
 
 const GetInTouch = () => {
   const [name, setName] = useState("");
@@ -21,17 +11,51 @@ const GetInTouch = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here, e.g., send email or perform other actions
-    console.log("Form submitted:", {
-      name,
-      companyName,
-      title,
-      phone,
-      email,
-      message,
-    });
+
+    try {
+      // Create a new document in the "contacts" collection
+      await addDoc(collection(db, "contacts"), {
+        name,
+        companyName,
+        title,
+        phone,
+        email,
+        message,
+      });
+
+      // Show success message using SweetAlert
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent!",
+        text: "We’ll get back to you soon.",
+        confirmButtonText: "OK",
+        background: "#131314", // Optional: set background color to match your app's theme
+        color: "#00bfff", // Optional: text color
+        confirmButtonColor: "#00bfff", // Optional: button color
+      });
+
+      // Optionally, reset the form after submission
+      setName("");
+      setCompanyName("");
+      setTitle("");
+      setPhone("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      // Optionally, show an error message
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Something went wrong. Please try again later.",
+        confirmButtonText: "OK",
+        background: "#131314", // Optional
+        color: "#00bfff", // Optional
+        confirmButtonColor: "#00bfff", // Optional
+      });
+    }
   };
 
   return (
@@ -47,6 +71,7 @@ const GetInTouch = () => {
           <h5 className="mb-16 text-5xl">What can we solve for you today?</h5>
           <div className="rounded-md border border-slate-50 p-12">
             <form onSubmit={handleSubmit}>
+              {/* Form fields go here */}
               <div className="mb-4 flex flex-row items-center">
                 <label
                   htmlFor="name"
@@ -98,7 +123,6 @@ const GetInTouch = () => {
                   placeholder="pizzas!"
                 />
               </div>
-
               <div className="mb-4 flex flex-row items-center">
                 <label
                   htmlFor="message"
