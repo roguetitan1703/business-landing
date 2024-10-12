@@ -117,35 +117,33 @@ const TechStack = () => {
       key={tech.name}
       src={tech.icon}
       alt={tech.name}
-      className="h-24 my-10 hover:scale-110 transition-all duration-500 ease-in-out"
+      className="h-16 sm:h-20 lg:h-24 my-6 sm:my-8 lg:my-10 hover:scale-110 transition-all duration-500 ease-in-out"
       onMouseEnter={() => handleMouseEnter(tech.colorgrad)}
       onMouseLeave={handleMouseLeave}
     />
   ));
 
   return (
-    <div className="">
-      <div className="mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:items-center lg:px-8">
-        <div className="text-slate-50 p-4 rounded-lg">
-          <p
-            className="text-lg uppercase font-extrabold mb-4"
-            style={{ color: "#ff0000" }}
-          >
-            Tech Stack
-          </p>
-          <h5 className="mb-16 text-5xl">
-            Technologies which make sure your tech never falls behind.
-          </h5>
+    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="text-slate-50 p-4 rounded-lg">
+        <p
+          className="text-lg uppercase font-extrabold mb-4"
+          style={{ color: "#ff0000" }}
+        >
+          Tech Stack
+        </p>
+        <h5 className="mb-16 text-4xl sm:text-5xl">
+          Technologies which make sure your tech never falls behind.
+        </h5>
 
-          <div>
-            <div
-              className={`relative -inset-1 rounded-lg transition-all  duration-1000 ${
-                hoveredTech ? ` ${hoveredTech}` : "bg-white"
-              }`}
-            >
-              <div className="rounded-xl border border-slate-50 p-12 ring-1 ring-black">
-                <div className="grid grid-cols-6">{RenderTechIcons}</div>
-              </div>
+        <div
+          className={`relative -inset-1 rounded-lg transition-all duration-1000 ${
+            hoveredTech ? ` ${hoveredTech}` : "bg-white"
+          }`}
+        >
+          <div className="rounded-xl border border-slate-50 p-12 ring-1 ring-black">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {RenderTechIcons}
             </div>
           </div>
         </div>

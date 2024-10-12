@@ -1,22 +1,21 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import {
-  Features,
-  Header,
-  Hero,
-  Footer,
-  GetInTouch,
-  TechStack,
-} from "./components";
+import { Header, Footer } from "./components";
+import { WhatweDo, Services, Home } from "./Screens";
 function App() {
   return (
-    <div className="bg-[#131314]">
-      <Header />
-      <Hero />
-      <Features />
-      <TechStack />
-      <GetInTouch />
-      <Footer />
-    </div>
+    <Router>
+      <div className="bg-[#131314] scroll-smooth">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/what-we-do" element={<WhatweDo />} />
+          <Route path="/our-services" element={<Services />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
