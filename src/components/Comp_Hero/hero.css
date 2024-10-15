@@ -1,0 +1,15 @@
+/* Add this CSS to your stylesheet */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Move slightly down */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-in-out forwards; /* 0.8s duration and forwards fill-mode */
+}

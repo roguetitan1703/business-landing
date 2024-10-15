@@ -1,12 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import "./Comp_Hero/hero.css";
+
+const words = ["Design", "Build", "Plan", "Execute"]; // List of words to cycle through
 
 const Hero = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0); // State to track the current word
+  const [displayWord, setDisplayWord] = useState(words[0]); // Word displayed in the UI
+  const [isChanging, setIsChanging] = useState(false); // State to track if we are changing words
+
+  // Effect to cycle through the words every 1.5 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Check if we are currently changing words
+      if (!isChanging) {
+        // Start changing words
+        setIsChanging(true);
+
+        // Show random letters before switching to the new word
+        const randomLetters = Array.from(
+          { length: words[currentWordIndex].length },
+          () => String.fromCharCode(Math.floor(Math.random() * 26) + 97) // Generate random lowercase letters
+        ).join("");
+
+        setDisplayWord(randomLetters); // Display random letters
+
+        // Set timeout to switch to the actual word
+        setTimeout(() => {
+          // Move to the next word after random letters
+          const nextIndex = (currentWordIndex + 1) % words.length;
+          setCurrentWordIndex(nextIndex);
+          setDisplayWord(words[nextIndex]); // Set new word after random letters
+          setIsChanging(false); // Allow changing again
+        }, 500); // Duration of random letters before showing the actual word
+      }
+    }, 1500); // 1.5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, [currentWordIndex, isChanging]); // Dependencies include currentWordIndex and isChanging
+
   return (
     <div className="text-slate-50 relative">
       <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:h-screen lg:items-center lg:px-8 z-0">
-        <div className="max-w-3xl text-center sm:text-left z-0">
+        <div className="max-w-3xl text-center sm:text-left z-0 fade-in-up">
           {/* Adjust font size for responsiveness */}
           <h1 className="text-6xl sm:text-7xl lg:text-9xl font-extrabold">
             The only{" "}
@@ -18,12 +55,14 @@ const Hero = () => {
         </div>
 
         <div className="max-w-3xl flex flex-col sm:flex-row justify-between items-start mt-12 z-0">
-          <p className="text-xl">
-            to Design, Build, Plan and Execute your next idea into Reality
+          <p className="text-xl fade-in-up" style={{ animationDelay: "0.1s" }}>
+            to {displayWord} your next idea into Reality{" "}
+            {/* Show the current or changing word */}
           </p>
           <p
             onClick={() => window.scrollTo({ top: 6250, behavior: "smooth" })}
-            className="flex items-center group z-10 cursor-pointer mt-8 sm:mt-0"
+            className="flex items-center group z-10 cursor-pointer mt-8 sm:mt-0 fade-in-up"
+            style={{ animationDelay: "0.2s" }}
           >
             <div className="relative rounded-full flex flex-row items-center px-4 py-2 bg-gradient-to-l hover:bg-none from-cyan-400 to-purple-500 hover:ring-white hover:ring-1 hover:scale-105 transition-transform ease-in-out duration-150">
               <span className="mr-1 text-transparent text-nowrap bg-clip-text bg-white group-hover:bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:text-transparent">
