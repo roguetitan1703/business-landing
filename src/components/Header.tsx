@@ -16,12 +16,12 @@ const HeaderLink = ({ linkName, linkUrl, fn }) => {
 };
 
 const Header = () => {
-  const scrollToFoot = () => {
-    const footElement = document.getElementById("foot");
-    if (footElement) {
-      footElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToFoot = () => {
+  //   const footElement = document.getElementById("foot");
+  //   if (footElement) {
+  //     footElement.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
   const scrollTogit = () => {
     const footElement = document.getElementById("git");
     if (footElement) {
