@@ -1,20 +1,19 @@
 // Floating Sidebar Component
 import React, { useEffect, useState, useRef } from "react";
 import { FeaturesList } from "../../devdata/constants";
-
 const FloatingSidebar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-      if (scrollPosition >= 970 && scrollPosition <= 4150) {
+      if (scrollPosition >= 850 && scrollPosition <= 2550) {
         console.log("Scroll Position:", scrollPosition);
         setScrollPosition(scrollPosition - 720);
-      } else if (scrollPosition < 970) {
-        setScrollPosition(970 - 720);
-      } else if (scrollPosition > 4150) {
-        setScrollPosition(4150 - 720);
+      } else if (scrollPosition < 850) {
+        setScrollPosition(850 - 720);
+      } else if (scrollPosition > 2550) {
+        setScrollPosition(2550 - 720);
       }
     };
 
@@ -37,8 +36,8 @@ const FloatingSidebar = () => {
           <li
             key={service.name}
             className={`text-lg ${
-              scrollPosition >= index * 650 &&
-              scrollPosition < (index + 1) * 650
+              scrollPosition >= index * 330 &&
+              scrollPosition < (index + 1) * 330
                 ? "text-yellow-300"
                 : "text-white"
             }`}

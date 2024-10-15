@@ -19,3 +19,4 @@ export { default as Strategy } from "./strategy.png";
 export { default as Development } from "./development.png";
 export { default as Support } from "./support.png";
 export { default as Elasticity } from "./elasticity.png";
+export { default as Glow } from "./glow.webp";
