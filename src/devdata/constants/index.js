@@ -1,1 +1,1 @@
-export { FeaturesList, dummyChars, words } from "./statics";
+export { FeaturesList, dummyChars, words, servicesArray } from "./statics";
