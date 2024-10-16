@@ -27,7 +27,7 @@ const FloatingSidebar = () => {
 
   return (
     <div
-      className="absolute px-6 py-8 bg-gray-800 text-white w-64"
+      className="absolute px-6 py-8 bg-[#131314] text-white w-64"
       style={{ top: scrollPosition }}
     >
       <h3 className="text-xl font-bold mb-6">Services We Offer</h3>
