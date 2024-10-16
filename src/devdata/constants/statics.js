@@ -1,5 +1,15 @@
 import { Design, Strategy, Development, Support, Elasticity } from "../assets";
-
+import {
+  faLightbulb,
+  faGear,
+  faMobile,
+  faLaptop,
+  faPalette,
+  faRobot,
+  faCloud,
+  faNetworkWired,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 export const FeaturesList = [
   {
     name: "Strategy",
@@ -104,54 +114,54 @@ export const servicesArray = [
     name: "Custom Software Development",
     description:
       "Design and development of bespoke software solutions tailored to your business needs, offering full lifecycle management.",
-    icon: "gear", // Font Awesome icon class for gear
+    icon: faGear, // Font Awesome icon class for gear
   },
   {
     name: "Mobile & Web Application Development",
     description:
       "End-to-end mobile application development for iOS and Android platforms, alongside responsive, scalable, and performance-optimized web applications.",
-    icon: "mobile", // Font Awesome icon class for mobile
+    icon: faMobile, // Font Awesome icon class for mobile
   },
   {
     name: "Website Design & Development",
     description:
       "Professional website design and development, creating user-friendly, visually appealing websites, optimized for SEO and performance.",
-    icon: "laptop", // Font Awesome icon class for laptop
+    icon: faLaptop, // Font Awesome icon class for laptop
   },
   {
     name: "UX/UI Design",
     description:
       "Intuitive and engaging user interfaces (UI) and user experience (UX) optimization for mobile apps and web platforms.",
-    icon: "palette", // Font Awesome icon class for palette
+    icon: faPalette, // Font Awesome icon class for palette
   },
   {
     name: "Artificial Intelligence Solutions",
     description:
       "AI-powered tools and applications for business automation, insights, and improved decision-making. AI integration into existing systems to enhance operational efficiency and competitiveness.",
-    icon: "robot", // Font Awesome icon class for robot
+    icon: faRobot, // Font Awesome icon class for robot
   },
   {
     name: "Cloud Solutions & Hosting",
     description:
       "Reliable cloud hosting services for websites, mobile applications, and software solutions, with scalable cloud infrastructure to support your growing business.",
-    icon: "cloud", // Font Awesome icon class for cloud
+    icon: faCloud, // Font Awesome icon class for cloud
   },
   {
     name: "IT Consultancy & System Integration",
     description:
       "Strategic IT consultancy and system integration services to ensure seamless connectivity between your business systems and technologies.",
-    icon: "network-wired", // Font Awesome icon class for network-wired
+    icon: faNetworkWired, // Font Awesome icon class for network-wired
   },
   {
     name: "E-commerce Development",
     description:
       "Development of e-commerce platforms for online businesses, managing online stores, payments, and logistics.",
-    icon: "shopping-cart", // Font Awesome icon class for shopping-cart
+    icon: faShoppingCart, // Font Awesome icon class for shopping-cart
   },
   {
     name: "Emerging Technologies & Innovation",
     description:
       "Focus on AI, machine learning, and emerging operating systems, bringing state-of-the-art solutions to your business.",
-    icon: "lightbulb", // Font Awesome icon class for lightbulb
+    icon: faLightbulb, // Font Awesome icon class for lightbulb
   },
 ];
