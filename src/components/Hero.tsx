@@ -1,10 +1,65 @@
 import React, { useEffect, useState } from "react";
+import SlotCounter from "react-slot-counter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./Comp_Hero/hero.css";
 
 const words = ["Design", "Build", "Plan", "Execute"]; // List of words to cycle through
 
+const dummyChars = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 const Hero = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0); // State to track the current word
   const [displayWord, setDisplayWord] = useState(words[0]); // Word displayed in the UI
@@ -18,28 +73,36 @@ const Hero = () => {
         // Start changing words
         setIsChanging(true);
 
-        // Show random letters before switching to the new word
-        const randomLetters = Array.from(
-          { length: words[currentWordIndex].length },
-          () => String.fromCharCode(Math.floor(Math.random() * 26) + 97) // Generate random lowercase letters
-        ).join("");
+        // // Show random letters before switching to the new word
+        // const randomLetters = Array.from(
+        //   { length: words[currentWordIndex].length },
+        //   () => String.fromCharCode(Math.floor(Math.random() * 26) + 97) // Generate random lowercase letters
+        // ).join("");
 
-        setDisplayWord(randomLetters); // Display random letters
+        // setDisplayWord(randomLetters); // Display random letters
 
         // Set timeout to switch to the actual word
-        setTimeout(() => {
-          // Move to the next word after random letters
-          const nextIndex = (currentWordIndex + 1) % words.length;
-          setCurrentWordIndex(nextIndex);
-          setDisplayWord(words[nextIndex]); // Set new word after random letters
-          setIsChanging(false); // Allow changing again
-        }, 500); // Duration of random letters before showing the actual word
+        const nextIndex = (currentWordIndex + 1) % words.length;
+        setCurrentWordIndex(nextIndex);
+        setDisplayWord(words[nextIndex]); // Set new word after random letters
+        setIsChanging(false); // Allow changing again
       }
-    }, 1500); // 1.5 seconds
+    }, 5000); // 1.5 seconds
 
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, [currentWordIndex, isChanging]); // Dependencies include currentWordIndex and isChanging
 
+  const SlotAnimatorText = (text) => {
+    return (
+      <SlotCounter
+        value={displayWord}
+        duration={0.7}
+        dummyCharacters={dummyChars}
+        dummyCharacterCount={52}
+        hasInfiniteList={true}
+      />
+    );
+  };
   return (
     <div className="text-slate-50 relative">
       <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:h-screen lg:items-center lg:px-8 z-0">
@@ -56,8 +119,8 @@ const Hero = () => {
 
         <div className="max-w-3xl flex flex-col sm:flex-row justify-between items-start mt-12 z-0">
           <p className="text-xl fade-in-up" style={{ animationDelay: "0.1s" }}>
-            to {displayWord} your next idea into Reality{" "}
-            {/* Show the current or changing word */}
+            to {<SlotAnimatorText text={displayWord} />} your next idea into
+            Reality {/* Show the current or changing word */}
           </p>
           <p
             onClick={() => window.scrollTo({ top: 6250, behavior: "smooth" })}
