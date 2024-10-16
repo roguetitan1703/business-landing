@@ -7,13 +7,13 @@ const FloatingSidebar = () => {
   useEffect(() => {
     const handleScroll = () => {
       let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-      if (scrollPosition >= 850 && scrollPosition <= 2220) {
+      if (scrollPosition >= 848 && scrollPosition <= 2332) {
         console.log("Scroll Position:", scrollPosition);
         setScrollPosition(scrollPosition - 720);
-      } else if (scrollPosition < 850) {
-        setScrollPosition(850 - 720);
-      } else if (scrollPosition > 2220) {
-        setScrollPosition(2220 - 720);
+      } else if (scrollPosition < 848) {
+        setScrollPosition(848 - 720);
+      } else if (scrollPosition > 2332) {
+        setScrollPosition(2332 - 720);
       }
     };
 

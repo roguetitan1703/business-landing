@@ -1,0 +1,39 @@
+/* General styles */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  z-index: 1; /* Make sure the text stays above the bubble */
+  transition: color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Create the expanding circle effect using ::before */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white bubble */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 0;
+}
+
+/* On hover, the circle expands */
+.nav-link:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+/* Change text color on hover */
+.nav-link:hover {
+  color: #fff; /* Or any color you prefer */
+}

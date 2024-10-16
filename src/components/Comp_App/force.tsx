@@ -7,8 +7,8 @@ export default function RockBut({ width = 1000, height = 1000 }) {
       style={{
         width: width,
         height: height,
-        top: -50,
-        right: 130,
+        top: -550,
+        right: 80,
         position: "absolute",
       }}
     >

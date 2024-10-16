@@ -6,17 +6,21 @@ import { Glow } from "../devdata/assets";
 // Individual Feature Card Component with hover glow
 const Feature = ({ name, subhead, description, image, color }) => {
   return (
-    <div className="w-full lg:w-5/5 mx-auto flex flex-row odd:justify-start even:justify-end group">
+    <div className="w-full mx-auto flex flex-col lg:flex-row odd:justify-start even:justify-end group">
       <div
-        className="w-2/3 flex flex-col lg:flex-row group-even:flex-row group-odd:flex-row-reverse items-center justify-between py-2 lg:py-4 
+        className="w-full lg:w-2/3 flex flex-col lg:flex-row group-even:flex-row group-odd:flex-row-reverse items-center justify-between py-2 lg:py-4 
         bg-[#131314] rounded-lg shadow-lg hover:shadow-[0_0_30px_10px] hover:shadow-current transition-shadow duration-150 ease-in-out"
         style={{
           borderColor: color,
         }}
       >
         {/* Image Section */}
-        <div className="p-3 lg:p-4">
-          <img src={image} alt={name} className="rounded-lg max-h-80" />
+        <div className="p-3 lg:p-4 w-full lg:w-1/2">
+          <img
+            src={image}
+            alt={name}
+            className="rounded-lg w-full max-h-80 object-cover"
+          />
         </div>
 
         {/* Text Section */}
@@ -28,7 +32,7 @@ const Feature = ({ name, subhead, description, image, color }) => {
             {subhead}
           </p>
           <Glowing text={name} glowColor={color} />
-          <p className="text-md">{description}</p>
+          <p className="text-sm sm:text-md lg:text-lg">{description}</p>
         </div>
       </div>
     </div>
@@ -46,16 +50,16 @@ const Features = () => {
         className="absolute inset-0 w-full object-cover opacity-20" // Ensure the background image covers the whole area
       />
       <div
-        className="relative flex m-10"
+        className="relative flex flex-col lg:flex-row m-10 space-y-10 lg:space-y-0"
         style={{ backgroundColor: "transparent" }}
       >
-        {/* Floating Sidebar on the left */}
-        <div className="px-8">
+        {/* Floating Sidebar on the left (only visible on large screens) */}
+        <div className="px-8 hidden lg:block">
           <Floaty />
         </div>
 
         {/* Feature List aligned right */}
-        <div className="ml-auto w-5/6 text-slate-50 px-4 py-32 sm:px-6 lg:px-8 space-y-10">
+        <div className="ml-auto w-full lg:w-5/6 text-slate-50 px-4 py-16 sm:px-6 lg:px-8 space-y-10">
           {FeaturesList.map((feature) => (
             <Feature
               key={feature.name}

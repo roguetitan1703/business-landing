@@ -4,6 +4,7 @@ import Spline from "@splinetool/react-spline";
 export default function RockBut({ width = 300, height = 350 }) {
   return (
     <div
+      className="hidden lg:block"
       style={{
         width: width,
         height: height,
