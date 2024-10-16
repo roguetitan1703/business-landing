@@ -37,6 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "firebase": "npm run build && firebase deploy",
     "build:css": "npx tailwindcss -i ./app/static/css/tailwind.css -o ./app/static/css/output.css --watch"
   },
   "eslintConfig": {
