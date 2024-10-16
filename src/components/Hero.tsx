@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./Comp_Hero/hero.css";
+import { Forcefield } from "./Comp_App";
 
 const words = ["Design", "Build", "Plan", "Execute"]; // List of words to cycle through
 
@@ -42,7 +43,7 @@ const Hero = () => {
 
   return (
     <div className="text-slate-50 relative">
-      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:h-screen lg:items-center lg:px-8 z-0">
+      <div className="z-10 relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:h-screen lg:items-center lg:px-8 z-0">
         <div className="max-w-3xl text-center sm:text-left z-0 fade-in-up">
           {/* Adjust font size for responsiveness */}
           <h1 className="text-6xl sm:text-7xl lg:text-9xl font-extrabold">
@@ -74,6 +75,11 @@ const Hero = () => {
             </div>
           </p>
         </div>
+      </div>
+
+      {/* Forcefield positioned to the right */}
+      <div className="z-1 lg:w-1/3 z-10 ">
+        <Forcefield />
       </div>
     </div>
   );

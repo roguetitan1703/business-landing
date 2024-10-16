@@ -1,15 +1,15 @@
 import React from "react";
 import Spline from "@splinetool/react-spline";
 
-export default function RockBut({ width = 300, height = 250 }) {
+export default function RockBut({ width = 1000, height = 1000 }) {
   return (
     <div
       style={{
         width: width,
         height: height,
-        position: "fixed",
-        bottom: 10,
-        right: 10,
+        top: -50,
+        right: 130,
+        position: "absolute",
       }}
     >
       <Spline
@@ -18,7 +18,7 @@ export default function RockBut({ width = 300, height = 250 }) {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }, 1000)
         }
-        scene="https://prod.spline.design/bhs-62pzmTWUDqwL/scene.splinecode"
+        scene="https://prod.spline.design/i7vuPWvPzm-2meso/scene.splinecode"
       />
     </div>
   );

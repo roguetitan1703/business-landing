@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Header, Footer, Rocketup } from "./components";
+import { Header, Footer } from "./components";
+import { Rocketup } from "./components/Comp_App";
 import { WhatweDo, Services, Home, Contact } from "./Screens";
 function App() {
   return (
