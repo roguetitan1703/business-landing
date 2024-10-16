@@ -4,3 +4,4 @@ export { default as HeroBackground } from "./HeroBackground.tsx";
 export { default as Features } from "./Features.tsx";
 export { default as Footer } from "./Footer.tsx";
 export { default as TechStack } from "./TechStack.tsx";
+export { default as Rocketup } from "./rocket.tsx";

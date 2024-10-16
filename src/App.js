@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Header, Footer } from "./components";
+import { Header, Footer, Rocketup } from "./components";
 import { WhatweDo, Services, Home, Contact } from "./Screens";
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Route path="/our-services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Rocketup />
         <Footer />
       </div>
     </Router>
