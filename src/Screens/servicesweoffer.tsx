@@ -78,7 +78,7 @@ const OurServices = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col space-y-4 mt-10 py-16 px-6">
+        <div className="flex flex-col space-y-4 mt-5 pb-16 px-6">
           {servicesArray.map((service) => (
             <div
               key={service.name}

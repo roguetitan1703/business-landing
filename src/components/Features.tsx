@@ -6,22 +6,17 @@ import { Glow } from "../devdata/assets";
 // Individual Feature Card Component with hover glow
 const Feature = ({ name, subhead, description, image, color }) => {
   return (
-    <div className="w-full lg:w-5/5 mx-auto">
-      {/* Card Layout with hover effect */}
+    <div className="w-full lg:w-5/5 mx-auto flex flex-row odd:justify-start even:justify-end group">
       <div
-        className="flex flex-col lg:flex-row even:flex-row odd:flex-row-reverse items-center py-2 lg:py-4 
-        bg-gray-800 rounded-lg shadow-lg hover:shadow-[0_0_30px_10px] hover:shadow-current transition-shadow duration-300 ease-in-out"
+        className="w-2/3 flex flex-col lg:flex-row group-even:flex-row group-odd:flex-row-reverse items-center justify-between py-2 lg:py-4 
+        bg-[#131314] rounded-lg shadow-lg hover:shadow-[0_0_30px_10px] hover:shadow-current transition-shadow duration-150 ease-in-out"
         style={{
           borderColor: color,
         }}
       >
         {/* Image Section */}
-        <div className="w-full lg:w-1/2 p-3 lg:p-4">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-auto max-h-48 lg:max-h-60 rounded-lg"
-          />
+        <div className="p-3 lg:p-4">
+          <img src={image} alt={name} className="rounded-lg max-h-80" />
         </div>
 
         {/* Text Section */}
@@ -60,7 +55,7 @@ const Features = () => {
         </div>
 
         {/* Feature List aligned right */}
-        <div className="ml-auto w-3/5 text-slate-50 max-w-screen-lg px-4 py-32 sm:px-6 lg:px-8 space-y-10">
+        <div className="ml-auto w-5/6 text-slate-50 px-4 py-32 sm:px-6 lg:px-8 space-y-10">
           {FeaturesList.map((feature) => (
             <Feature
               key={feature.name}
