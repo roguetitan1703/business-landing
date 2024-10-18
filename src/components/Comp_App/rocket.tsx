@@ -9,7 +9,7 @@ export default function RockBut({ width = 300, height = 350 }) {
         width: width,
         height: height,
         position: "fixed",
-        bottom: 10,
+        bottom: 0,
         right: 10,
       }}
     >
@@ -18,7 +18,7 @@ export default function RockBut({ width = 300, height = 350 }) {
         onClick={() =>
           setTimeout(() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
-          }, 1000)
+          }, 2000)
         }
         scene="https://prod.spline.design/bhs-62pzmTWUDqwL/scene.splinecode"
       />
