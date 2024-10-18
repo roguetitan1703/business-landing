@@ -4,7 +4,7 @@ import { ServiceCard } from "../components/Comp_Services";
 
 const OurServices = () => {
   return (
-    <div className="bg-[url('devdata/assets/bg1.png')]">
+    <div className="bg-[url('devdata/assets/bg3.png')]">
       <div className="max-w-7xl mx-auto p-6 text-white">
         <div className="text-slate-50 relative">
           <div className="relative mx-auto max-w-screen-xl px-4 py-16 lg:items-center ">

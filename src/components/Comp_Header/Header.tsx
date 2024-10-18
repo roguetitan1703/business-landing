@@ -14,15 +14,17 @@ import logo from "../../devdata/assets/logo.svg";
 // Reusable HeaderLink component
 const HeaderLink = ({ linkName, linkUrl, fn, icon }) => {
   return (
-    <a
-      onClick={fn || console.log("Navigating...")}
-      href={linkUrl}
-      className="relative text-sm font-bold cursor-pointer transition-transform ease-in-out duration-300 group"
-    >
-      <span className="relative z-10">
-        <FontAwesomeIcon icon={icon} className="mr-2" /> {linkName}
-      </span>
-    </a>
+    <div>
+      <a
+        onClick={fn || console.log("Navigating...")}
+        href={linkUrl}
+        className="relative text-sm font-bold cursor-pointer transition-transform ease-in-out duration-300 group"
+      >
+        <span className=" z-10">
+          <FontAwesomeIcon icon={icon} className="ml-3" /> {linkName}
+        </span>
+      </a>
+    </div>
   );
 };
 
