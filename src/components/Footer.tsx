@@ -47,9 +47,9 @@ const Footer = () => {
             </a>
             <button
               onClick={scrollTogit}
-              className="rounded-md flex flex-row items-center px-2 py-1 ring-black ring-1 focus:ring-black transition-all ease-in-out duration-150 hover:shadow-xl hover:bg-black hover:text-slate-50"
+              className="rounded-md w-[120px] flex flex-row items-center px-2 py-1 ring-black ring-1 focus:ring-black transition-all ease-in-out duration-150 hover:shadow-xl hover:bg-black hover:text-slate-50"
             >
-              <p>Get in touch</p>
+              <a href="/contact">Get in touch</a>
             </button>
           </div>
 

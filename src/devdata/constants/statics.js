@@ -108,60 +108,68 @@ export const dummyChars = [
   "Y",
   "Z",
 ];
-
 export const servicesArray = [
   {
-    name: "Custom Software Development",
+    name: "Custom Software",
     description:
-      "Design and development of bespoke software solutions tailored to your business needs, offering full lifecycle management.",
+      "Bespoke software developed to your business needs, offering full lifecycle management.",
     icon: faGear, // Font Awesome icon class for gear
+    color: "#276ec2", // Blue
   },
   {
     name: "Mobile & Web Application Development",
     description:
-      "End-to-end mobile application development for iOS and Android platforms, alongside responsive, scalable, and performance-optimized web applications.",
+      "Complete application development for iOS and Android platforms, alongside responsiveness, scalablability and security.",
     icon: faMobile, // Font Awesome icon class for mobile
+    color: "#810dc0", // Teal
   },
   {
     name: "Website Design & Development",
     description:
-      "Professional website design and development, creating user-friendly, visually appealing websites, optimized for SEO and performance.",
+      "Creating user-friendly, visually appealing websites, optimized for SEO and performance.",
     icon: faLaptop, // Font Awesome icon class for laptop
+    color: "#F5A623", // Orange
   },
   {
     name: "UX/UI Design",
     description:
-      "Intuitive and engaging user interfaces (UI) and user experience (UX) optimization for mobile apps and web platforms.",
+      "Intuitive and engaging designs, optimization for mobile apps and web platforms.",
     icon: faPalette, // Font Awesome icon class for palette
+    color: "#BD10E0", // Purple
   },
   {
-    name: "Artificial Intelligence Solutions",
+    name: "Artificial Intelligence",
     description:
-      "AI-powered tools and applications for business automation, insights, and improved decision-making. AI integration into existing systems to enhance operational efficiency and competitiveness.",
+      "AI-powered tools and applications integration into existing or new systems for business automation, insights, and improved decision-making.",
     icon: faRobot, // Font Awesome icon class for robot
+    color: "#D0021B", // Red
   },
   {
-    name: "Cloud Solutions & Hosting",
+    name: "Cloud Solutions",
     description:
-      "Reliable cloud hosting services for websites, mobile applications, and software solutions, with scalable cloud infrastructure to support your growing business.",
+      "Reliable cloud hosting services for websites, mobile applications, and APIs.",
     icon: faCloud, // Font Awesome icon class for cloud
+    color: "#4CAF50", // Green
   },
   {
     name: "IT Consultancy & System Integration",
     description:
-      "Strategic IT consultancy and system integration services to ensure seamless connectivity between your business systems and technologies.",
+      "Seamlessly connecting your business systems and technologies, never miss out on a better way to do something.",
     icon: faNetworkWired, // Font Awesome icon class for network-wired
+    color: "#FFC107", // Amber
   },
   {
     name: "E-commerce Development",
     description:
-      "Development of e-commerce platforms for online businesses, managing online stores, payments, and logistics.",
+      "Managing online stores, payments, and logistics for  online businesses of any scale.",
     icon: faShoppingCart, // Font Awesome icon class for shopping-cart
+    color: "#E91E63", // Pink
   },
   {
     name: "Emerging Technologies & Innovation",
     description:
       "Focus on AI, machine learning, and emerging operating systems, bringing state-of-the-art solutions to your business.",
     icon: faLightbulb, // Font Awesome icon class for lightbulb
+    color: "#3F51B5", // Indigo
   },
 ];

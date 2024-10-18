@@ -23,17 +23,17 @@ const OurServices = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col space-y-4 mt-5 pb-16 px-6">
+        <div className="flex flex-col space-y-8 md:space-y-1 lg:space-y-4 mt-5 pb-16 px-4 md:px-16 lg:px-24">
           {servicesArray.map((service) => (
             <ServiceCard service={service} />
           ))}
         </div>
-        <p className="mt-6">
+        {/* <p className="mt-6">
           At <strong>DelPat</strong>, we are committed to helping your business
           grow by leveraging the power of technology. Our expert team is ready
           to deliver solutions that enhance productivity, streamline operations,
           and drive innovation.
-        </p>
+        </p> */}
       </div>
     </div>
   );
