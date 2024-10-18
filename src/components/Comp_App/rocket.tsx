@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import Spline from "@splinetool/react-spline";
 
 export default function RockBut({ width = 300, height = 350 }) {
-  const [showlabel, setshowlabel] = useState(false);
+  const [showlabel, setshowlabel] = useState(true);
+  const [showrocket, setshowrocket] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       let scrollPosition = window.scrollY || document.documentElement.scrollTop;
+      if (scrollPosition > 0) {
+        setshowrocket(false);
+      }
       if (scrollPosition > 500) {
         setshowlabel(false);
       } else {
@@ -31,7 +35,7 @@ export default function RockBut({ width = 300, height = 350 }) {
       }}
     >
       <Spline
-        // hidden={showlabel}
+        hidden={showrocket}
         onClick={() =>
           setTimeout(() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
