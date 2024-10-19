@@ -19,6 +19,10 @@ module.exports = {
           "0%": { transform: "scale(1)" },
           "100%": { transform: "scale(1.4)" },
         },
+        rotate: {
+          "0%": { transform: "rotate(0deg) scale(10)" },
+          "100%": { transform: "rotate(-360deg) scale(10)" },
+        },
         // flicker: {
         //   "0%, 100%": { opacity: "1" },
         //   "10%": { opacity: "0.6" },
@@ -38,6 +42,7 @@ module.exports = {
       animation: {
         gradient: "animatedgradient 4s ease infinite alternate",
         beat: "beat 1s infinite alternate",
+        rotate: "rotate 12s linear infinite",
         // flicker: "flicker 1s infinite",
       },
     },
