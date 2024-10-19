@@ -23,6 +23,19 @@ export default function RockBut({ width = 300, height = 350 }) {
     };
   }, []);
 
+  // a component of 3d object rocket spline
+  const RocketScene = (
+    <Spline
+      hidden={showrocket}
+      onClick={() =>
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 2000)
+      }
+      scene="https://prod.spline.design/bhs-62pzmTWUDqwL/scene.splinecode"
+    />
+  );
+
   return (
     <div
       className="hidden lg:block cursor-pointer"
@@ -34,15 +47,7 @@ export default function RockBut({ width = 300, height = 350 }) {
         right: 10,
       }}
     >
-      <Spline
-        hidden={showrocket}
-        onClick={() =>
-          setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }, 2000)
-        }
-        scene="https://prod.spline.design/bhs-62pzmTWUDqwL/scene.splinecode"
-      />
+      {RocketScene}
       <h1
         hidden={showlabel}
         style={{ fontSize: 20, color: "white", bottom: 40, right: -120 }}
