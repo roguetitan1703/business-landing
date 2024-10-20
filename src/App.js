@@ -15,7 +15,7 @@ function App() {
           <Route path="/our-services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        {/* <Rocketup /> */}
+        <Rocketup />
         <Footer />
       </div>
     </Router>
