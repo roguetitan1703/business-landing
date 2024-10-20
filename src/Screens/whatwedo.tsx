@@ -1,63 +1,53 @@
-import React, { useState } from "react";
-import "../../node_modules/swiper/swiper-bundle.min.css";
+import React, { useState, useEffect } from "react";
+import "./swiper.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ScrollTrigger from "react-scroll-trigger";
-
-// Example data for Array1 and Array2
-const array1 = [
-  {
-    title: "Project 1",
-    description: "Innovative web design.",
-    image: "https://via.placeholder.com/300", // example image
-  },
-  {
-    title: "Project 2",
-    description: "Cutting-edge AI system.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "Project 3",
-    description: "Mobile app development.",
-    image: "https://via.placeholder.com/300",
-  },
-];
-
-const array2 = [
-  {
-    title: "Service 1",
-    description: "Expert consultancy services.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "Service 2",
-    description: "Tailored software solutions.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "Service 3",
-    description: "Cloud-based systems.",
-    image: "https://via.placeholder.com/300",
-  },
-];
+import { FreeMode, Autoplay } from "swiper/modules";
+import { array1, array2 } from "../devdata/constants";
 
 const WhatWeDo = () => {
   const [autoplayDirection1, setAutoplayDirection1] = useState(true);
-  const [autoplayDirection2, setAutoplayDirection2] = useState(true);
+  const [autoplayDirection2, setAutoplayDirection2] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
 
-  // Trigger when scroll enters array1 section
-  const onEnterArray1 = () => setAutoplayDirection1(false);
-  const onExitArray1 = () => setAutoplayDirection1(true);
+  // Trigger to detect scroll and change autoplay directions
+  const handleScroll = () => {
+    const currentScrollTop =
+      window.scrollY || document.documentElement.scrollTop;
 
-  // Trigger when scroll enters array2 section
-  const onEnterArray2 = () => setAutoplayDirection2(false);
-  const onExitArray2 = () => setAutoplayDirection2(true);
+    if (currentScrollTop > lastScrollTop) {
+      // Scrolling down
+      setAutoplayDirection1(false); // Left to right
+      setAutoplayDirection2(true); // Right to left
+    } else {
+      // Scrolling up
+      setAutoplayDirection1(true); // Right to left
+      setAutoplayDirection2(false); // Left to right
+    }
+
+    setLastScrollTop(currentScrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop]);
 
   return (
-    <div className="max-w-7xl mx-auto p-6 text-white">
-      <h1 className="text-4xl font-bold mb-6">What We Do</h1>
+    <div
+      className="mx-auto text-white"
+      style={{ marginRight: "auto", marginLeft: "auto" }}
+    >
+      {/* Introduction Section */}
+      <section className="mb-12 text-center">
+        <h1 className="text-5xl font-bold mb-4">What We Do 🚀✨</h1>
+        <p className="text-lg">
+          We are committed to transforming ideas into reality through innovative
+          solutions.
+        </p>
+      </section>
 
       {/* Create Section */}
-      <section className="mb-8">
+      <section className="mb-8 text-right">
         <h2 className="text-2xl font-semibold mb-4">Create</h2>
         <p>
           We design innovative digital experiences that move people and elevate
@@ -66,33 +56,34 @@ const WhatWeDo = () => {
         </p>
       </section>
 
-      {/* Array1 Carousel */}
-      <ScrollTrigger onEnter={onEnterArray1} onExit={onExitArray1}>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-          autoplay={{
-            delay: 3000,
-            reverseDirection: autoplayDirection1,
-          }}
-          pagination={{ clickable: true }}
-          navigation
-          loop={true}
-        >
-          {array1.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="p-6 bg-gray-800 rounded-lg">
-                <img src={item.image} alt={item.title} className="mb-4" />
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </ScrollTrigger>
+      {/* Array1 Carousel - Full Screen Swiper */}
+      <Swiper
+        className="swiper-no-swiping w-full"
+        noSwiping={true}
+        spaceBetween={10}
+        slidesPerView={4}
+        loop={true}
+        freeMode
+        speed={20000}
+        autoplay={{
+          delay: 0,
+          reverseDirection: autoplayDirection1,
+        }}
+        modules={[FreeMode, Autoplay]}
+      >
+        {array1.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="p-6 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
+              <img src={item.image} alt={item.title} className="mb-4" />
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       {/* Build Section */}
-      <section className="mb-8 mt-12">
+      <section className="mb-8 text-right">
         <h2 className="text-2xl font-semibold mb-4">Build</h2>
         <p>
           Leveraging cutting-edge technologies, we build scalable, customized
@@ -101,31 +92,34 @@ const WhatWeDo = () => {
         </p>
       </section>
 
-      {/* Array2 Carousel */}
-      <ScrollTrigger onEnter={onEnterArray2} onExit={onExitArray2}>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-          autoplay={{
-            delay: 3000,
-            reverseDirection: autoplayDirection2,
-          }}
-          pagination={{ clickable: true }}
-          navigation
-          loop={true}
-        >
-          {array2.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="p-6 bg-gray-800 rounded-lg">
-                <img src={item.image} alt={item.title} className="mb-4" />
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </ScrollTrigger>
-      <section className="mb-8">
+      {/* Array2 Carousel - Full Screen Swiper */}
+      <Swiper
+        className="swiper-no-swiping w-full"
+        noSwiping={true}
+        spaceBetween={10}
+        slidesPerView={4}
+        loop={true}
+        freeMode
+        speed={20000}
+        autoplay={{
+          delay: 0,
+          reverseDirection: autoplayDirection2,
+        }}
+        modules={[FreeMode, Autoplay]}
+      >
+        {array2.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="p-6 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
+              <img src={item.image} alt={item.title} className="mb-4" />
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Grow Section */}
+      <section className="mb-8 text-right">
         <h2 className="text-2xl font-semibold mb-4">Grow</h2>
         <p className="mb-4">
           We help businesses grow with tailored strategies that focus on
@@ -139,7 +133,9 @@ const WhatWeDo = () => {
           <li>User Testing & Product Management</li>
         </ul>
       </section>
-      <div className="mt-6">
+
+      {/* Centered "Get in touch" Section */}
+      <div className="flex items-center justify-center mt-12">
         <p>
           Need ears for the project?{" "}
           <a href="/contact" className="underline">

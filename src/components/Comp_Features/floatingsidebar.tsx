@@ -1,5 +1,5 @@
 // Floating Sidebar Component
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { FeaturesList } from "../../devdata/constants";
 const FloatingSidebar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
