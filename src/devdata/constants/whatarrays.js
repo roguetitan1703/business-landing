@@ -82,14 +82,4 @@ export const array2 = [
     description: "IoT system development.",
     image: "https://via.placeholder.com/300",
   },
-  {
-    title: "Service 9",
-    description: "Augmented reality solutions.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "Service 10",
-    description: "DevOps and continuous integration.",
-    image: "https://via.placeholder.com/300",
-  },
 ];

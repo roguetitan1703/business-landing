@@ -1,36 +1,72 @@
 import React, { useState, useEffect } from "react";
-import "./swiper.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Autoplay } from "swiper/modules";
-import { array1, array2 } from "../devdata/constants";
-
+import "./swiper.css"; // Ensure you have the relevant styles in this file
+import { array1, array2 } from "../devdata/constants"; // Your data
+let last = 0;
 const WhatWeDo = () => {
-  const [autoplayDirection1, setAutoplayDirection1] = useState(true);
-  const [autoplayDirection2, setAutoplayDirection2] = useState(false);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [currentIndex1, setCurrentIndex1] = useState(0);
+  const [currentIndex2, setCurrentIndex2] = useState(0);
 
-  // Trigger to detect scroll and change autoplay directions
+  const slideCount1 = array1.length;
+  const slideCount2 = array2.length;
+  // Autoplay durations
+  const autoplayInterval = 10000; // Common interval for both arrays
+  const [isScrollingDown, setIsScrollingDown] = useState(true);
+
+  // Auto-play
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isScrollingDown) {
+        setCurrentIndex1((prev) => (prev + 1) % slideCount1); // Move right
+        setCurrentIndex2((prev) => -(prev + 1) % slideCount1);
+      } else {
+        setCurrentIndex1((prev) => (prev - 1 + slideCount1) % slideCount1); // Move left
+        setCurrentIndex2((prev) => -(prev - 1 + slideCount2) % slideCount2);
+      }
+    }, autoplayInterval);
+
+    return () => clearInterval(interval);
+  }, [isScrollingDown]);
+
+  // Scroll event handler to adjust autoplay direction
   const handleScroll = () => {
-    const currentScrollTop =
-      window.scrollY || document.documentElement.scrollTop;
+    const currentScrollTop = window.scrollY;
+    // Set direction based on scroll movement
+    const scrollDifference = currentScrollTop - last;
+    // console.log(scrollDifference, last, currentScrollTop);
 
-    if (currentScrollTop > lastScrollTop) {
-      // Scrolling down
-      setAutoplayDirection1(false); // Left to right
-      setAutoplayDirection2(true); // Right to left
-    } else {
-      // Scrolling up
-      setAutoplayDirection1(true); // Right to left
-      setAutoplayDirection2(false); // Left to right
+    if (scrollDifference > 0) {
+      setIsScrollingDown(true); // Scrolling down
+      last = last > window.scrollY ? window.scrollY : last;
+    } else if (scrollDifference < 0) {
+      setIsScrollingDown(false); // Scrolling up
+      last = last < window.scrollY ? window.scrollY : last;
     }
 
-    setLastScrollTop(currentScrollTop);
+    // Update current index based on scroll
+    setCurrentIndex1((prev) => {
+      const newIndex = prev + scrollDifference;
+      console.log(prev, (newIndex + slideCount1) % slideCount1);
+      return (newIndex + slideCount1) % (slideCount1 / 2); // Loop back
+    });
+    setCurrentIndex2((prev) => {
+      const newIndex = prev + scrollDifference;
+      console.log(prev, (newIndex + slideCount2) % slideCount2);
+      return -((newIndex + slideCount2) % (slideCount2 / 2)); // Loop back
+    });
   };
-
+  const handlestopscroll = () => {
+    last = window.scrollY;
+    // console.log("ended", last);
+  };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollTop]);
+    window.addEventListener("scrollend", handlestopscroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scrollend", handlestopscroll);
+    };
+  }, []);
 
   return (
     <div
@@ -56,31 +92,26 @@ const WhatWeDo = () => {
         </p>
       </section>
 
-      {/* Array1 Carousel - Full Screen Swiper */}
-      <Swiper
-        className="swiper-no-swiping w-full"
-        noSwiping={true}
-        spaceBetween={10}
-        slidesPerView={4}
-        loop={true}
-        freeMode
-        speed={20000}
-        autoplay={{
-          delay: 0,
-          reverseDirection: autoplayDirection1,
-        }}
-        modules={[FreeMode, Autoplay]}
-      >
-        {array1.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="p-6 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
-              <img src={item.image} alt={item.title} className="mb-4" />
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p>{item.description}</p>
+      {/* Array1 Carousel (Autoplay Left to Right) */}
+      <div className="swiper-container">
+        <div
+          className="swiper-wrapper"
+          style={{
+            transform: `translateX(${currentIndex1 * 200}%)`,
+            transition: "linear 120s",
+          }} // Adjust for cloned slides
+        >
+          {array1.map((item, index) => (
+            <div className="swiper-slide" key={index}>
+              <div className="p-4 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
+                <img src={item.image} alt={item.title} className="mb-4" />
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          ))}
+        </div>
+      </div>
 
       {/* Build Section */}
       <section className="mb-8 text-right">
@@ -92,31 +123,26 @@ const WhatWeDo = () => {
         </p>
       </section>
 
-      {/* Array2 Carousel - Full Screen Swiper */}
-      <Swiper
-        className="swiper-no-swiping w-full"
-        noSwiping={true}
-        spaceBetween={10}
-        slidesPerView={4}
-        loop={true}
-        freeMode
-        speed={20000}
-        autoplay={{
-          delay: 0,
-          reverseDirection: autoplayDirection2,
-        }}
-        modules={[FreeMode, Autoplay]}
-      >
-        {array2.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="p-6 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
-              <img src={item.image} alt={item.title} className="mb-4" />
-              <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p>{item.description}</p>
+      {/* Array2 Carousel (Autoplay Right to Left) */}
+      <div className="swiper-container">
+        <div
+          className="swiper-wrapper"
+          style={{
+            transform: `translateX(${currentIndex2 * 200}%)`,
+            transition: "linear 120s",
+          }} // Adjust for cloned slides
+        >
+          {array2.map((item, index) => (
+            <div className="swiper-slide" key={index}>
+              <div className="p-4 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
+                <img src={item.image} alt={item.title} className="mb-4" />
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          ))}
+        </div>
+      </div>
 
       {/* Grow Section */}
       <section className="mb-8 text-right">
