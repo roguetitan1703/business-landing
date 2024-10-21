@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Header, Footer } from "./components";
-import { Rocketup } from "./components/Comp_App";
+import { Rocketup, Loaditup } from "./components/Comp_App";
 import { WhatweDo, Services, Home, Contact } from "./Screens";
 function App() {
+  const [bgshow, setbgshow] = useState(false);
+  const ti = 10000;
+  useEffect(() => {
+    setTimeout(() => {
+      setbgshow(true);
+    }, ti);
+  }, []);
+
   return (
     <Router>
-      <div className="bg-[#131314] scroll-smooth ">
+      <Loaditup bigshow={bgshow} />
+
+      <div className={`bg-[#131314] scroll-smooth ${!bgshow ? "hidden" : ""}`}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
