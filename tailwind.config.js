@@ -39,6 +39,7 @@ module.exports = {
       backgroundSize: {
         "300%": "300%",
       },
+
       animation: {
         gradient: "animatedgradient 4s ease infinite alternate",
         beat: "beat 1s infinite alternate",

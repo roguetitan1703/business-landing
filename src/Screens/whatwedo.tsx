@@ -67,15 +67,24 @@ const WhatWeDo = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 text-white">
-      {/* Introduction Section */}
-      <section className="mb-12 text-center">
-        <h1 className="text-3xl sm:text-5xl font-bold mb-4">What We Do 🚀✨</h1>
-        <p className="text-base sm:text-lg">
-          We are committed to transforming ideas into reality through innovative
-          solutions.
-        </p>
-      </section>
+    <div className="max-w-7xl mx-auto p-6 text-white">
+      <div className="text-slate-50 relative">
+        <div className="relative mx-auto max-w-screen-xl px-4 py-16 lg:items-center ">
+          <div className="text-center">
+            {/* Adjust font size for responsiveness */}
+            <h1 className="text-6xl sm:text-7xl lg:text-9xl font-bold">
+              What We Do 🚀✨
+            </h1>
+          </div>
+
+          <div className="text-center flex flex-col sm:flex-row justify-center mt-12 ">
+            <p className="text-xl">
+              We are committed to transforming ideas into reality through
+              innovative solutions.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Create Section */}
       <section className="mb-8 text-right w-2/3 justify-self-end">
@@ -181,6 +190,13 @@ const WhatWeDo = () => {
           </a>
         </p>
       </div>
+
+      {/* <p className="mt-6">
+            At <strong>DelPat</strong>, we are committed to helping your business
+            grow by leveraging the power of technology. Our expert team is ready
+            to deliver solutions that enhance productivity, streamline operations,
+            and drive innovation.
+          </p> */}
     </div>
   );
 };

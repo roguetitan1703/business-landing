@@ -33,20 +33,26 @@ const TechStack = () => {
   const renderTechIconReturner = (tech: TechStackProps) => {
     const shadowStyle = `hover:shadow-${tech.color.slice(3, -3)}`;
     let hoverBgStyle = `hover:bg-[#191919]`;
+    let borderColorStyle = "border-slate-50/10";
+
     if (
       tech.name === "Next.js" ||
       tech.name === "Flask" ||
       tech.name === "Three.js" ||
-      tech.name === "AWS"
+      tech.name === "AWS" ||
+      tech.name === "WordPress" ||
+      tech.name === "Express" ||
+      tech.name === "Django"
     ) {
       hoverBgStyle = `hover:bg-slate-50`;
+      borderColorStyle = `border-slate-500/20`;
     }
     return (
       <img
         key={tech.name}
         src={tech.icon}
         alt={tech.name}
-        className={`rounded-xl p-2 ${hoverBgStyle} hover:border-[0.1px] border-slate-50/10 hover:shadow-xl ${shadowStyle}/50 h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 m-6 sm:m-8 lg:m-10 hover:scale-110 transition-all duration-500 ease-in-out`}
+        className={`rounded-xl p-2 ${hoverBgStyle} ${borderColorStyle} hover:border-[0.1px] hover:shadow-xl ${shadowStyle}/50 h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 m-6 sm:m-8 lg:m-10 hover:scale-110 transition-all duration-500 ease-in-out`}
         onMouseEnter={() => handleMouseEnter(tech)}
         onMouseLeave={handleMouseLeave}
       />
