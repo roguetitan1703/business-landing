@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { db } from "../firebase"; // Adjust the path according to your structure
 import { collection, addDoc } from "firebase/firestore"; // Import necessary Firestore functions
 import Swal from "sweetalert2"; // Import SweetAlert2
+import axios from "axios";
+const BOT_TOKEN = process.env.REACT_APP_BOT_TOKEN;
+const CHAT_ID = process.env.REACT_APP_CHAT_ID;
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -24,7 +27,20 @@ const Contact = () => {
         email,
         message,
       });
-
+      const telegramMessage = `
+      New Lead Form Website form:
+      - Name: ${name}
+      - Company: ${companyName}
+      - Title: ${title}
+      - Phone: ${phone}
+      - Email: ${email}
+      - Message: ${message}
+    `;
+      await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        chat_id: CHAT_ID,
+        text: telegramMessage,
+        parse_mode: "HTML",
+      });
       // Show success message using SweetAlert
       Swal.fire({
         icon: "success",
