@@ -15,6 +15,7 @@ import {
   WordPress,
   TailwindCSS,
   Threejs,
+  MetaTrader,
 } from "../assets";
 export const TechIcons = [
   {
@@ -160,5 +161,14 @@ export const TechIcons = [
     animatedBorderColor:
       "bg-[conic-gradient(#15b8a7_20deg,transparent_120deg)]",
     color: "bg-[#15b8a7]/10",
+  },
+  {
+    name: "MetaTrader",
+    icon: MetaTrader,
+    colorgrad: "bg-gradient-to-r from-green-500 to-yellow-10",
+    shadowColor: "bg-[#191919]",
+    animatedBorderColor:
+      "bg-[conic-gradient(#2338c4_20deg,transparent_120deg)]",
+    color: "bg-[#23c461]/10",
   },
 ];

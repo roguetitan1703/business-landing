@@ -22,7 +22,7 @@ const Hero = () => {
         setDisplayWord(words[nextIndex]); // Set new word after random letters
         setIsChanging(false); // Allow changing again
       }
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, [currentWordIndex, isChanging]);

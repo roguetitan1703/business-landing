@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header, Footer } from "./components";
-import { Rocketup, Loaditup } from "./components/Comp_App";
+import { Rocketup } from "./components/Comp_App";
 import { WhatweDo, Services, Home, Contact } from "./Screens";
 
 function Navs() {
   return (
     <Router>
-      <Loaditup />
-
       <div className={"bg-[#131314] scroll-smooth"}>
         <Header />
         <Routes>
@@ -17,7 +15,7 @@ function Navs() {
           <Route path="/our-services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Rocketup />
+        {/* <Rocketup /> */}
         <Footer />
       </div>
     </Router>

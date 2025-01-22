@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { db } from "../firebase"; // Adjust the path according to your structure
 import { collection, addDoc } from "firebase/firestore"; // Import necessary Firestore functions
 import Swal from "sweetalert2"; // Import SweetAlert2
+import { useStateContext } from "../context";
 import axios from "axios";
+import { servicesArray } from "../devdata/constants";
+
 const BOT_TOKEN = process.env.REACT_APP_BOT_TOKEN;
 const CHAT_ID = process.env.REACT_APP_CHAT_ID;
 
@@ -13,12 +16,12 @@ const Contact = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const { service, setservice } = useStateContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Create a new document in the "contacts" collection
       await addDoc(collection(db, "contacts"), {
         name,
         companyName,
@@ -26,7 +29,9 @@ const Contact = () => {
         phone,
         email,
         message,
+        service,
       });
+
       const telegramMessage = `
       New Lead Form Website form:
       - Name: ${name}
@@ -35,41 +40,41 @@ const Contact = () => {
       - Phone: ${phone}
       - Email: ${email}
       - Message: ${message}
+      - Service: ${service}
     `;
       await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         chat_id: CHAT_ID,
         text: telegramMessage,
         parse_mode: "HTML",
       });
-      // Show success message using SweetAlert
+
       Swal.fire({
         icon: "success",
         title: "Message Sent!",
         text: "We’ll get back to you soon.",
         confirmButtonText: "OK",
-        background: "#131314", // Optional: set background color to match your app's theme
-        color: "#00bfff", // Optional: text color
-        confirmButtonColor: "#00bfff", // Optional: button color
+        background: "#131314",
+        color: "#00bfff",
+        confirmButtonColor: "#00bfff",
       });
 
-      // Optionally, reset the form after submission
       setName("");
       setCompanyName("");
       setTitle("");
       setPhone("");
       setEmail("");
       setMessage("");
+      setservice(servicesArray[0].name); // Reset to default
     } catch (error) {
       console.error("Error adding document: ", error);
-      // Optionally, show an error message
       Swal.fire({
         icon: "error",
         title: "Oops!",
         text: "Something went wrong. Please try again later.",
         confirmButtonText: "OK",
-        background: "#131314", // Optional
-        color: "#00bfff", // Optional
-        confirmButtonColor: "#00bfff", // Optional
+        background: "#131314",
+        color: "#00bfff",
+        confirmButtonColor: "#00bfff",
       });
     }
   };
@@ -121,6 +126,27 @@ const Contact = () => {
                   required
                   placeholder="the pizza corp"
                 />
+              </div>
+              <div className="mb-4 flex flex-row items-center">
+                <label
+                  htmlFor="service"
+                  className="w-1/4 block text-sm font-medium mb-2"
+                >
+                  It's a
+                </label>
+                <select
+                  id="service"
+                  className="w-3/4 bg-gray-700 border border-gray-600 text-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  value={service}
+                  onChange={(e) => setservice(e.target.value)}
+                  required
+                >
+                  {servicesArray.map((svc) => (
+                    <option key={svc.name} value={svc.name}>
+                      {svc.name}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="mb-4 flex flex-row items-center">
                 <label

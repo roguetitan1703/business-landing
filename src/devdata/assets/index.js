@@ -1,4 +1,5 @@
 export { default as Android } from "./Android.png";
+export { default as MetaTrader } from "./metatrader.png";
 export { default as Angular } from "./Angular.png";
 export { default as AWS } from "./AWS.png";
 export { default as Bootstrap } from "./Bootstrap.png";
