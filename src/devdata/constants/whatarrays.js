@@ -1,85 +1,117 @@
-export const array1 = [
+export const projects1 = [
   {
-    title: "Project 1",
-    description: "Innovative web design.",
-    image: "https://via.placeholder.com/300",
+    id: 1,
+    name: "Project Orion",
+    image:
+      "https://images.unsplash.com/photo-1738707060349-c92b5b15bf80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D",
+    watchLink: "https://example.com/orion",
+    description: "A cutting-edge AI model for predictive analytics.",
   },
   {
-    title: "Project 2",
-    description: "Cutting-edge AI system.",
-    image: "https://via.placeholder.com/300",
+    id: 2,
+    name: "Project Nebula",
+    image:
+      "https://images.unsplash.com/photo-1738707060473-a23914a02d8a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D",
+    watchLink: "https://example.com/nebula",
+    description: "An advanced cloud computing framework.",
   },
   {
-    title: "Project 3",
-    description: "Mobile app development.",
-    image: "https://via.placeholder.com/300",
+    id: 3,
+    name: "Project Titan",
+    image:
+      "https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp",
+    watchLink: "https://example.com/titan",
+    description: "AI-driven cybersecurity solutions for enterprises.",
   },
   {
-    title: "Project 4",
-    description: "E-commerce platform overhaul.",
-    image: "https://via.placeholder.com/300",
+    id: 4,
+    name: "Project Helix",
+    image:
+      "https://images.unsplash.com/photo-1735078255510-a5455dfe9f22?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxODZ8fHxlbnwwfHx8fHw%3D",
+    watchLink: "https://example.com/helix",
+    description: "DNA-based computing for the next-gen applications.",
   },
   {
-    title: "Project 5",
-    description: "Custom CRM system.",
-    image: "https://via.placeholder.com/300",
+    id: 5,
+    name: "Project Quantum",
+    image:
+      "https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp",
+    watchLink: "https://example.com/quantum",
+    description: "Quantum computing algorithms for AI acceleration.",
   },
   {
-    title: "Project 6",
-    description: "Advanced analytics dashboard.",
-    image: "https://via.placeholder.com/300",
+    id: 6,
+    name: "Project Solaris",
+    image:
+      "https://images.unsplash.com/photo-1738240880701-a70e8ba9118c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3OHx8fGVufDB8fHx8fA%3D%3D",
+    watchLink: "https://example.com/solaris",
+    description: "Solar-powered IoT devices for a sustainable future.",
   },
   {
-    title: "Project 7",
-    description: "IoT device integration.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "Project 8",
-    description: "Enterprise cloud migration.",
-    image: "https://via.placeholder.com/300",
+    id: 7,
+    name: "Project Aether",
+    image:
+      "https://images.unsplash.com/photo-1623894042497-88cc2ec21047?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8",
+    watchLink: "https://example.com/aether",
+    description: "Decentralized communication systems for Web3.",
   },
 ];
 
-export const array2 = [
+export const projects2 = [
   {
-    title: "Service 1",
-    description: "Expert consultancy services.",
-    image: "https://via.placeholder.com/300",
+    id: 1,
+    name: "Project Alpha",
+    image:
+      "https://images.unsplash.com/photo-1738831920727-73e17adc5b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMHx8fGVufDB8fHx8fA%3D%3D",
+    watchLink: "https://example.com/alpha",
+    description: "An innovative approach to modern web applications.",
   },
   {
-    title: "Service 2",
-    description: "Tailored software solutions.",
-    image: "https://via.placeholder.com/300",
+    id: 2,
+    name: "Project Beta",
+    image:
+      "https://images.unsplash.com/photo-1738463783712-131ad5b53dc9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3MHx8fGVufDB8fHx8fA%3D%3D",
+    watchLink: "https://example.com/beta",
+    description: "A next-gen e-commerce solution for online stores.",
   },
   {
-    title: "Service 3",
-    description: "Cloud-based systems.",
-    image: "https://via.placeholder.com/300",
+    id: 3,
+    name: "Project Gamma",
+    image:
+      "https://images.unsplash.com/photo-1737981064643-fe1bd2ca7164?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4N3x8fGVufDB8fHx8fA%3D%3D",
+    watchLink: "https://example.com/gamma",
+    description: "AI-powered analytics for better business decisions.",
   },
   {
-    title: "Service 4",
-    description: "E-commerce platform development.",
-    image: "https://via.placeholder.com/300",
+    id: 4,
+    name: "Project Delta",
+    image:
+      "https://images.unsplash.com/photo-1738193450396-31b212c006f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOTl8fHxlbnwwfHx8fHw%3D",
+    watchLink: "https://example.com/delta",
+    description: "Secure cloud storage with fast retrieval times.",
   },
   {
-    title: "Service 5",
-    description: "Cybersecurity services.",
-    image: "https://via.placeholder.com/300",
+    id: 5,
+    name: "Project Epsilon",
+    image:
+      "https://plus.unsplash.com/premium_photo-1670179693861-0c4a92718888?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjl8fHxlbnwwfHx8fHw%3D",
+    watchLink: "https://example.com/epsilon",
+    description: "Revolutionary UI/UX for modern SaaS platforms.",
   },
   {
-    title: "Service 6",
-    description: "Blockchain technology integration.",
-    image: "https://via.placeholder.com/300",
+    id: 6,
+    name: "Project Zeta",
+    image:
+      "https://plus.unsplash.com/premium_photo-1683749808221-cbbc4d27aac9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMzd8fHxlbnwwfHx8fHw%3D",
+    watchLink: "https://example.com/zeta",
+    description: "Blockchain-based fintech solutions.",
   },
   {
-    title: "Service 7",
-    description: "Data analytics and visualization.",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    title: "Service 8",
-    description: "IoT system development.",
-    image: "https://via.placeholder.com/300",
+    id: 7,
+    name: "Project Eta",
+    image:
+      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+    watchLink: "https://example.com/eta",
+    description: "Next-level automation with IoT integration.",
   },
 ];

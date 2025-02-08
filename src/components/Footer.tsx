@@ -36,13 +36,13 @@ const Footer = () => {
 
           {/* Center Section: Quick Links */}
           <div className="flex flex-col space-y-2 text-sm">
-            <a href="/" className="hover:text-black">
+            <a href="/" className="hover:text-blue-500">
               Homepage
             </a>
-            <a href="/what-we-do" className="hover:text-black ">
+            <a href="/what-we-do" className="hover:text-blue-500">
               What We Do
             </a>
-            <a href="/our-services" className="hover:text-black ">
+            <a href="/our-services" className="hover:text-blue-500">
               Our Services
             </a>
             <button
@@ -57,31 +57,31 @@ const Footer = () => {
           <div className="flex flex-col space-y-2 text-sm">
             <a
               href="https://www.linkedin.com/company/delpat"
-              className="hover:text-black"
+              className="hover:text-blue-500"
             >
               LinkedIn
             </a>
             <a
               href="https://www.medium.com/delpat"
-              className="hover:text-black"
+              className="hover:text-blue-500"
             >
               Medium
             </a>
             <a
               href="https://www.facebook.com/delpat"
-              className="hover:text-black"
+              className="hover:text-blue-500"
             >
               Facebook
             </a>
             <a
               href="https://www.instagram.com/delpat"
-              className="hover:text-black"
+              className="hover:text-blue-500"
             >
               Instagram
             </a>
             <a
               href="https://www.twitter.com/delpat"
-              className="hover:text-black"
+              className="hover:text-blue-500"
             >
               X
             </a>

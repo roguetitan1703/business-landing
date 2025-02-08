@@ -1,71 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./swiper.css"; // Ensure you have the relevant styles in this file
-import { array1, array2 } from "../devdata/constants"; // Your data
+import { projects1, projects2 } from "../devdata/constants"; // Your data
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEarListen } from "@fortawesome/free-solid-svg-icons";
-let last = 0;
+import DaisyCarousel from "./cdaisyarousel";
 const WhatWeDo = () => {
-  const [currentIndex1, setCurrentIndex1] = useState(0);
-  const [currentIndex2, setCurrentIndex2] = useState(0);
-
-  const slideCount1 = array1.length;
-  const slideCount2 = array2.length;
-  // Autoplay durations
-  const autoplayInterval = 10000; // Common interval for both arrays
-  const [isScrollingDown, setIsScrollingDown] = useState(true);
-
-  // Auto-play
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (isScrollingDown) {
-        setCurrentIndex1((prev) => (prev + 1) % slideCount1); // Move right
-        setCurrentIndex2((prev) => -(prev + 1) % slideCount1);
-      } else {
-        setCurrentIndex1((prev) => (prev - 1 + slideCount1) % slideCount1); // Move left
-        setCurrentIndex2((prev) => -(prev - 1 + slideCount2) % slideCount2);
-      }
-    }, autoplayInterval);
-
-    return () => clearInterval(interval);
-  }, [isScrollingDown]);
-
-  // Scroll event handler to adjust autoplay direction
-  const handleScroll = () => {
-    const currentScrollTop = window.scrollY;
-    // Set direction based on scroll movement
-    const scrollDifference = currentScrollTop - last;
-
-    if (scrollDifference > 0) {
-      setIsScrollingDown(true); // Scrolling down
-      last = last > window.scrollY ? window.scrollY : last;
-    } else if (scrollDifference < 0) {
-      setIsScrollingDown(false); // Scrolling up
-      last = last < window.scrollY ? window.scrollY : last;
-    }
-
-    // Update current index based on scroll
-    setCurrentIndex1((prev) => {
-      const newIndex = prev + scrollDifference;
-      return (newIndex + slideCount1) % (slideCount1 / 2); // Loop back
-    });
-    setCurrentIndex2((prev) => {
-      const newIndex = prev + scrollDifference;
-      return -((newIndex + slideCount2) % (slideCount2 / 2)); // Loop back
-    });
-  };
-  const handlestopscroll = () => {
-    last = window.scrollY;
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scrollend", handlestopscroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scrollend", handlestopscroll);
-    };
-  }, []);
-
   return (
     <div className="max-w-7xl mx-auto p-6 text-white">
       <div className="text-slate-50 relative">
@@ -96,32 +35,7 @@ const WhatWeDo = () => {
         </p>
       </section>
 
-      {/* Array1 Carousel (Autoplay Left to Right) */}
-      <div className="swiper-container">
-        <div
-          className="swiper-wrapper"
-          style={{
-            transform: `translateX(${currentIndex1 * 200}%)`,
-            transition: "linear 120s",
-          }}
-        >
-          {array1.map((item, index) => (
-            <div className="swiper-slide" key={index}>
-              <div className="p-4 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="mb-4 object-cover w-full h-48 sm:h-64"
-                />
-                <h3 className="text-lg sm:text-xl font-semibold">
-                  {item.title}
-                </h3>
-                <p>{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <DaisyCarousel projects={projects1} />
 
       {/* Build Section */}
       <section className="mb-8 text-right w-2/3 justify-self-end">
@@ -133,33 +47,7 @@ const WhatWeDo = () => {
         </p>
       </section>
 
-      {/* Array2 Carousel (Autoplay Right to Left) */}
-      <div className="swiper-container">
-        <div
-          className="swiper-wrapper"
-          style={{
-            transform: `translateX(${currentIndex2 * 200}%)`,
-            transition: "linear 120s",
-          }}
-        >
-          {array2.map((item, index) => (
-            <div className="swiper-slide" key={index}>
-              <div className="p-4 bg-gray-800 rounded-lg hover:scale-105 transition-transform duration-300">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="mb-4 object-cover w-full h-48 sm:h-64"
-                />
-                <h3 className="text-lg sm:text-xl font-semibold">
-                  {item.title}
-                </h3>
-                <p>{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
+      <DaisyCarousel projects={projects2} />
       {/* Grow Section */}
       <section className="mb-8 w-2/3 text-right justify-self-end">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Grow</h2>
