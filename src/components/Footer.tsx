@@ -8,7 +8,7 @@ const Footer = () => {
     }
   };
   return (
-    <footer id="foot" className="bg-slate-200 text-gray-900">
+    <footer id="foot" className="bg-slate-200 text-gray-900 z-100">
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Footer Content */}
         <div className="container mx-auto grid grid-cols-1 gap-8 md:grid-cols-3">

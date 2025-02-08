@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-
+import { Button } from "../../ui";
+import { useStateContext } from "../../context";
+import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
+  const { setservice } = useStateContext();
   return (
     <div
       key={service.name}
@@ -27,6 +30,13 @@ const ServiceCard = ({ service }) => {
         <div className="list-disc list-inside mt-1 mb-4 font-body">
           {service.description}
         </div>
+        <Link to={"/contact"} className="mt-5">
+          <Button
+            oncli={() => {
+              setservice(service.name);
+            }}
+          />
+        </Link>
       </div>
     </div>
   );
