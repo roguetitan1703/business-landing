@@ -14,7 +14,7 @@ import {
   ReactIcon,
   WordPress,
   TailwindCSS,
-  Threejs,
+  Threejss,
   MetaTrader,
 } from "../assets";
 export const TechIcons = [
@@ -128,7 +128,7 @@ export const TechIcons = [
   },
   {
     name: "Three.js",
-    icon: Threejs,
+    icon: Threejss,
     colorgrad: "bg-gradient-to-r from-gray-100  to-gray-10",
     shadowColor: "bg-[#e1e1eb]",
     animatedBorderColor:

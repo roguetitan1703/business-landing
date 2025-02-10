@@ -1,33 +1,41 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 
 const Carousel = ({ projects }) => {
-  const [dragging, setDragging] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
   const carouselRef = useRef(null);
 
-  const handleDragStart = (e) => {
-    setDragging(true);
-    carouselRef.current.scrollLeft -= e.movementX;
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - carouselRef.current.offsetLeft);
+    setScrollLeft(carouselRef.current.scrollLeft);
   };
 
-  const handleDragEnd = () => setDragging(false);
-  const handleDrag = (e) => {
-    if (!dragging) return;
-    carouselRef.current.scrollLeft -= e.movementX;
+  const handleMouseLeave = () => setIsDragging(false);
+  const handleMouseUp = () => setIsDragging(false);
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust sensitivity
+    carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
     <div
       ref={carouselRef}
-      className="carousel carousel-center rounded-box overflow-x-scroll flex gap-4 p-4 cursor-grab active:cursor-grabbing select-none"
-      onMouseDown={handleDragStart}
-      onMouseUp={handleDragEnd}
-      onMouseMove={handleDrag}
+      className="carousel carousel-center rounded-box overflow-x-scroll flex gap-4 p-4 cursor-grab active:cursor-grabbing select-none transition-transform duration-300 ease-in-out"
+      onMouseDown={handleMouseDown}
+      onMouseLeave={handleMouseLeave}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
     >
       {projects.map((project) => (
         <div
           key={project.id}
           className="carousel-item relative w-80 h-128 transition-transform duration-300 ease-in-out hover:scale-110"
-          draggable="true"
+          draggable="false"
         >
           <img
             src={project.image}

@@ -1,90 +1,77 @@
 import React from "react";
-import "./swiper.css"; // Ensure you have the relevant styles in this file
-import { projects1, projects2 } from "../devdata/constants"; // Your data
+import { projects1, projects2 } from "../devdata/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEarListen } from "@fortawesome/free-solid-svg-icons";
 import DaisyCarousel from "./cdaisyarousel";
+
 const WhatWeDo = () => {
   return (
     <div className="max-w-7xl mx-auto p-6 text-white">
-      <div className="text-slate-50 relative">
-        <div className="relative mx-auto max-w-screen-xl px-4 py-16 lg:items-center ">
-          <div className="text-center">
-            {/* Adjust font size for responsiveness */}
-            <h1 className="text-6xl sm:text-7xl lg:text-9xl font-bold">
-              What We Do 🚀✨
-            </h1>
-          </div>
+      {/* Hero Section */}
+      <div className="relative text-center py-16 bg-gradient-to-br from-indigo-900 via-purple-800 to-black rounded-2xl shadow-xl">
+        <h1 className="text-5xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight">
+          What We Do <span className="text-yellow-400">?</span>
+        </h1>
+        <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+          We transform ideas into reality with innovative digital solutions.
+        </p>
+      </div>
 
-          <div className="text-center flex flex-col sm:flex-row justify-center mt-12 ">
-            <p className="text-xl">
-              We are committed to transforming ideas into reality through
-              innovative solutions.
+      {/* Sections */}
+      <div className="mt-16 space-y-24">
+        {/* Create Section */}
+        <section className="flex flex-col items-end w-full">
+          <div className="w-2/3 text-right">
+            <h2 className="text-3xl font-semibold text-purple-400">Create</h2>
+            <p className="text-gray-300">
+              We design innovative digital experiences that move people and
+              elevate brands, blending creativity and technology.
             </p>
           </div>
-        </div>
+        </section>
+        <DaisyCarousel projects={projects1} />
+
+        {/* Build Section */}
+        <section className="flex flex-col items-end w-full">
+          <div className="w-2/3 text-right">
+            <h2 className="text-3xl font-semibold text-blue-400">Build</h2>
+            <p className="text-gray-300">
+              Leveraging cutting-edge technologies, we build scalable solutions
+              tailored to your business needs.
+            </p>
+          </div>
+        </section>
+        <DaisyCarousel projects={projects2} />
+
+        {/* Grow Section */}
+        <section className="flex flex-col items-end w-full">
+          <div className="w-2/3 text-right">
+            <h2 className="text-3xl font-semibold text-green-400">Grow</h2>
+            <p className="text-gray-300">
+              We help businesses grow with tailored strategies for long-term
+              success.
+            </p>
+            <ul className="mt-4 space-y-2 text-gray-300">
+              <li>🌍 Digital Strategy</li>
+              <li>📈 SEO & CRO</li>
+              <li>🔍 User Testing & Product Management</li>
+            </ul>
+          </div>
+        </section>
       </div>
 
-      {/* Create Section */}
-      <section className="mb-8 text-right w-2/3 justify-self-end">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Create</h2>
-        <p>
-          We design innovative digital experiences that move people and elevate
-          brands. Our approach blends creativity and technology to deliver
-          solutions that are both functional and aesthetically compelling.
-        </p>
-      </section>
-
-      <DaisyCarousel projects={projects1} />
-
-      {/* Build Section */}
-      <section className="mb-8 text-right w-2/3 justify-self-end">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Build</h2>
-        <p>
-          Leveraging cutting-edge technologies, we build scalable, customized
-          solutions that adapt to your evolving business needs. Our approach is
-          platform-agnostic and future-proof.
-        </p>
-      </section>
-
-      <DaisyCarousel projects={projects2} />
-      {/* Grow Section */}
-      <section className="mb-8 w-2/3 text-right justify-self-end">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Grow</h2>
-        <p className="mb-4">
-          We help businesses grow with tailored strategies that focus on
-          long-term success. From digital strategy to SEO and conversion
-          optimization, we ensure your business stays ahead in a competitive
-          market.
-        </p>
-        <ul className="list-disc ml-6" style={{ listStylePosition: "inside" }}>
-          <li>Digital Strategy</li>
-          <li>SEO & CRO</li>
-          <li>User Testing & Product Management</li>
-        </ul>
-      </section>
-
-      {/* Centered "Get in touch" Section */}
-      <div className="flex items-center justify-center mt-12">
-        <p className="text-sm sm:text-xl">
+      {/* CTA Section */}
+      <div className="mt-16 flex flex-col items-center">
+        <p className="text-lg text-gray-300 text-center">
           Need ears for the project?
-          <br />
-          <a
-            href="/contact"
-            className="inline-flex items-center px-4 py-2  text-white border border-black rounded shadow hover:bg-gray-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-transform duration-300"
-          >
-            Get in touch
-            <FontAwesomeIcon icon={faEarListen} className="ml-2" />
-          </a>
         </p>
+        <a
+          href="/contact"
+          className="mt-4 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+        >
+          Get in Touch <FontAwesomeIcon icon={faEarListen} />
+        </a>
       </div>
-
-      {/* <p className="mt-6">
-            At <strong>DelPat</strong>, we are committed to helping your business
-            grow by leveraging the power of technology. Our expert team is ready
-            to deliver solutions that enhance productivity, streamline operations,
-            and drive innovation.
-          </p> */}
     </div>
   );
 };
