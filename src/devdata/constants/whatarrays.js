@@ -174,58 +174,121 @@ export const projects1 = [
 export const projects2 = [
   {
     id: 1,
-    name: "Project Alpha",
+    name: "Custom Data Scraping Software Dashboard",
     image:
       "https://images.unsplash.com/photo-1738831920727-73e17adc5b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMHx8fGVufDB8fHx8fA%3D%3D",
-    watchLink: "https://example.com/alpha",
-    description: "An innovative approach to modern web applications.",
+    watchLink:
+      "https://docs.google.com/document/d/1x0PYKXKAUkVt1FqpKiNXq6qEiG-ySmgzWgfsLnB2BBc/edit?usp=sharing",
+    description:
+      "A custom data scraping software for internal use to extract, compare, and export data from various online sources",
   },
   {
     id: 2,
-    name: "Project Beta",
+    name: "YouTube Automation",
     image:
       "https://images.unsplash.com/photo-1738463783712-131ad5b53dc9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3MHx8fGVufDB8fHx8fA%3D%3D",
-    watchLink: "https://example.com/beta",
-    description: "A next-gen e-commerce solution for online stores.",
+    watchLink:
+      "https://docs.google.com/document/d/13sV5vdoYczWjF7OpngEpF_6cA6k9m2kJ6XSQs-Fy0ww/edit?usp=sharing",
+    description: "A Youtube automation Bots for Comments, Likes, and Views.",
   },
   {
     id: 3,
-    name: "Project Gamma",
+    name: "Job posting automation software",
     image:
       "https://images.unsplash.com/photo-1737981064643-fe1bd2ca7164?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4N3x8fGVufDB8fHx8fA%3D%3D",
-    watchLink: "https://example.com/gamma",
-    description: "AI-powered analytics for better business decisions.",
+    watchLink:
+      "https://docs.google.com/document/d/1DlNLqJ9utImi2Y9zQ2fmEZTwJZV1YeLh3IRD5DsGzhE/edit?usp=sharing",
+    description:
+      "A software to automate job scraping from multiple websites and apps and then upload the extracted job listings to a specific platform.",
   },
   {
     id: 4,
-    name: "Project Delta",
+    name: "Custom Wordpress Theme Website",
     image:
       "https://images.unsplash.com/photo-1738193450396-31b212c006f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOTl8fHxlbnwwfHx8fHw%3D",
-    watchLink: "https://example.com/delta",
-    description: "Secure cloud storage with fast retrieval times.",
+    watchLink:
+      "https://docs.google.com/document/d/1mcX12Vx1V7hRHL2-tRaa-jRUIrwVXP_ejcTLMYtR9EE/edit?usp=sharing",
+    description:
+      "a custom WordPress website tailored to their specific requirements, including plugin customization using PHP. The default WordPress plugins did not meet the client's unique needs, so the client requested specific features and functionalities that required custom plugin development and PHP modifications.",
   },
   {
     id: 5,
-    name: "Project Epsilon",
+    name: "Chart View",
     image:
       "https://plus.unsplash.com/premium_photo-1670179693861-0c4a92718888?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjl8fHxlbnwwfHx8fHw%3D",
-    watchLink: "https://example.com/epsilon",
-    description: "Revolutionary UI/UX for modern SaaS platforms.",
+    watchLink:
+      "https://docs.google.com/document/d/1sJ6jVZgRkHSl2Dfeq5MsIpONrRhAm2NY01CgK5xcXHA/edit?usp=sharing",
+    description:
+      "A web-based interactive charting application that could visualize real-time data with multiple timeframe options, can be used in Trading Apps and Dashboards.",
   },
   {
     id: 6,
-    name: "Project Zeta",
+    name: "ATS Resume ranker",
     image:
       "https://plus.unsplash.com/premium_photo-1683749808221-cbbc4d27aac9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMzd8fHxlbnwwfHx8fHw%3D",
-    watchLink: "https://example.com/zeta",
-    description: "Blockchain-based fintech solutions.",
+    watchLink:
+      "https://docs.google.com/document/d/1pUfXOpJXkgjeOH8CSz1e4QSb6N-5ibkkArySukuLnU8/edit?usp=sharing",
+    description:
+      "A web application that could evaluate resumes based on job descriptions and provide an ATS (Applicant Tracking System) ranking.",
   },
   {
     id: 7,
-    name: "Project Eta",
+    name: "AI Resume optimizer",
     image:
       "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
-    watchLink: "https://example.com/eta",
-    description: "Next-level automation with IoT integration.",
+    watchLink:
+      "https://docs.google.com/document/d/1t7qMChh1YfYIV2rm4EB6go7x5qxRvbCBrNCHXVD5_CQ/edit?usp=sharing",
+    description:
+      "An AI-powered web application that could optimize resumes and cover letters based on job descriptions.",
+  },
+  {
+    id: 8,
+    name: "Email Automation",
+    image:
+      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+    watchLink:
+      "https://docs.google.com/document/d/1LsLlSb2qOeTX7bnwDbwJrWeIEiLDwNt-Mr8VVys0Kps/edit?usp=sharing",
+    description:
+      "A custom email automation solution to manage bulk email sending, email verification, and lead management.",
+  },
+  {
+    id: 9,
+    name: "Spotify Downloader",
+    image:
+      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+    watchLink:
+      "https://docs.google.com/document/d/1LsLlSb2qOeTX7bnwDbwJrWeIEiLDwNt-Mr8VVys0Kps/edit?usp=sharing",
+    description:
+      "A a custom web application that allowed users to download entire Spotify playlists as MP3 files.",
+  },
+  {
+    id: 10,
+    name: "Spotify Recommender Engine",
+    image:
+      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+    watchLink:
+      "https://docs.google.com/document/d/19Zmx-qtk9vw_uFwNH1rBQRcRx_xPGbS-BpjnRjVS0gw/edit?usp=sharing",
+    description:
+      "An AI-driven recommendation engine that could suggest similar songs and playlists based on user preferences.",
+  },
+  {
+    id: 11,
+    name: "Recipe Finder App",
+    image:
+      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+    watchLink:
+      "https://docs.google.com/document/d/1cOODeDgRMyn80GryBeAifjpA0cbuiLkfwJuvpNlslow/edit?usp=sharing",
+    description:
+      "A recipe discovery platform that allowed users to search for recipes based on ingredients they have.",
+  },
+  {
+    id: 12,
+    name: "CAT Prephub",
+    image:
+      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+    watchLink:
+      "https://docs.google.com/document/d/1pmnFx4XcMkCP5a3D9e9LjsexFiMOj4gYi6J1T6ZxswQ/edit?usp=sharing",
+    description:
+      "A web-based platform to help students prepare for the CAT (Common Admission Test).",
   },
 ];
