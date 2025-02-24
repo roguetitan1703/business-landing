@@ -245,7 +245,7 @@ export const projects2 = [
     id: 8,
     name: "Email Automation",
     image:
-      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+      "https://images.unsplash.com/photo-1643845892686-30c241c3938c?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     watchLink:
       "https://docs.google.com/document/d/1LsLlSb2qOeTX7bnwDbwJrWeIEiLDwNt-Mr8VVys0Kps/edit?usp=sharing",
     description:
@@ -255,7 +255,7 @@ export const projects2 = [
     id: 9,
     name: "Spotify Downloader",
     image:
-      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+      "https://images.unsplash.com/photo-1613329671121-5d1cf551cc3f?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     watchLink:
       "https://docs.google.com/document/d/1LsLlSb2qOeTX7bnwDbwJrWeIEiLDwNt-Mr8VVys0Kps/edit?usp=sharing",
     description:
@@ -265,7 +265,7 @@ export const projects2 = [
     id: 10,
     name: "Spotify Recommender Engine",
     image:
-      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+      "https://images.unsplash.com/photo-1649194270405-0dfaf13cda14?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     watchLink:
       "https://docs.google.com/document/d/19Zmx-qtk9vw_uFwNH1rBQRcRx_xPGbS-BpjnRjVS0gw/edit?usp=sharing",
     description:
@@ -275,7 +275,7 @@ export const projects2 = [
     id: 11,
     name: "Recipe Finder App",
     image:
-      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+      "https://plus.unsplash.com/premium_photo-1691009757324-c0da70827662?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     watchLink:
       "https://docs.google.com/document/d/1cOODeDgRMyn80GryBeAifjpA0cbuiLkfwJuvpNlslow/edit?usp=sharing",
     description:
@@ -285,7 +285,7 @@ export const projects2 = [
     id: 12,
     name: "CAT Prephub",
     image:
-      "https://images.unsplash.com/photo-1738005787913-3a51f95507a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMjd8fHxlbnwwfHx8fHw%3D",
+      "https://plus.unsplash.com/premium_photo-1681666713680-fb39c13070f3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     watchLink:
       "https://docs.google.com/document/d/1pmnFx4XcMkCP5a3D9e9LjsexFiMOj4gYi6J1T6ZxswQ/edit?usp=sharing",
     description:
